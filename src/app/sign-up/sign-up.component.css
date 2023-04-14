@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.first-half {
+  flex: 1;
+  background-color: #2952bb;
+  color: #fff;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 30px 30px;
+}
+.headerName {
+  vertical-align: middle;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+}
+.logo img {
+  vertical-align: middle;
+}
+
+.login-half {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: center;
+
+}
+.description h1 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 150%;
+}
+.description p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+  width: 500px;
+}
+
+.register {
+  color: #2952bb;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 419px;
+  border: 2px solid #CBCBCB;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2952bb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 463px;
+
+}
+h1 {
+  font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+max-width: 15ch;
+}
+
+::placeholder {
+ color : #CBCBCB
+}
+
+form
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+label {
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+}
