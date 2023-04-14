@@ -6,5 +6,25 @@
   font-weight: 200;
   font-size: 13px;
   line-height: 150%;
+  text-align: center;
+  width: fit-content;
 }
+th {
 
+  color: #797979;
+}
+td,th {
+
+  padding: 10px 10px;
+}
+table {
+  border-collapse: collapse;
+}
+table tr{
+  border-bottom: 1px solid #cbcbcb;
+}
+/* .trContainer
+{
+  border-bottom: 1px solid #cbcbcb;
+  text-align: center;
+} */

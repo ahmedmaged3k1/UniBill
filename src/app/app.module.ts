@@ -8,6 +8,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { PendingBillsComponent } from './shared/pending-bills/pending-bills.component';
 import { CardComponent } from './shared/card/card.component';
 import { TableComponent } from './shared/table/table.component';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TableComponent } from './shared/table/table.component';
     SignUpComponent,
     PendingBillsComponent,
     CardComponent,
-    TableComponent
+    TableComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
