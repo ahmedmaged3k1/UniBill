@@ -14,7 +14,7 @@
   align-items: center;
   position: relative;
 }
-.haveAccount{
+.haveAccount {
   margin-top: 10px;
 }
 .logo {
@@ -50,7 +50,6 @@
   flex-direction: column;
   margin-bottom: 20px;
   justify-content: center;
-
 }
 .description h1 {
   font-family: "Montserrat";
@@ -82,7 +81,7 @@ input {
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 419px;
-  border: 2px solid #CBCBCB;
+  border: 2px solid #cbcbcb;
 }
 
 button {
@@ -94,31 +93,29 @@ button {
   border-radius: 5px;
   cursor: pointer;
   width: 463px;
-
 }
 h1 {
-  font-family: 'Montserrat', sans-serif;
-font-family: 'Poppins', sans-serif;
-max-width: 15ch;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+  max-width: 15ch;
 }
 
 ::placeholder {
- color : #CBCBCB
+  color: #cbcbcb;
 }
 
-form
-{
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 label {
-  font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 24px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 }
 .errorStyle {
   border-color: red;
@@ -128,5 +125,5 @@ div.errorMessage {
   font-size: 15px;
   margin-top: 1px;
   margin-bottom: 2px;
-  text-align: left;
+  text-align: center;
 }
