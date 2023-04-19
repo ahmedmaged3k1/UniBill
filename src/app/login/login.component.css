@@ -14,7 +14,9 @@
   align-items: center;
   position: relative;
 }
-
+.haveAccount{
+  margin-top: 10px;
+}
 .logo {
   position: absolute;
   top: 0px;
@@ -40,7 +42,9 @@
   justify-content: center;
   align-items: center;
 }
-
+.login-half h1 {
+  margin-bottom: 5px;
+}
 .form-group {
   display: flex;
   flex-direction: column;
@@ -115,4 +119,14 @@ font-style: normal;
 font-weight: 500;
 font-size: 16px;
 line-height: 24px;
+}
+.errorStyle {
+  border-color: red;
+}
+div.errorMessage {
+  color: red;
+  font-size: 15px;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  text-align: left;
 }
