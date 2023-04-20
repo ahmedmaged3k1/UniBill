@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/auth/auth.service';
+import { UserDataService } from '../shared/dataService/user-data.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,7 +14,8 @@ export class SignUpComponent implements OnInit {
     // Firebase Auth Elements 
   email : string = ' ';
   password : string = ' ';
-constructor(private auth : AuthService){}
+   newUser : User 
+constructor(private auth : AuthService, private dataService : UserDataService){}
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -35,8 +38,16 @@ constructor(private auth : AuthService){}
     if (this.signupForm.invalid) {
       alert('Please Submit Valid Data');
     }
+    
+    this.newUser.email= this.signupForm.get('email').value
+    this.newUser.password= this.signupForm.get('password').value
+    this.newUser.name= this.signupForm.get('fullName').value
+    this.newUser.phoneNumber= this.signupForm.get('phone').value
+    console.log(this.newUser)
+    this.dataService.addUser(this.newUser)
     this.auth.register(this.signupForm.get('email')?.value, this.signupForm.get('password')?.value)
-   
+
+
   }
   // Firebase Functions 
   register(){
