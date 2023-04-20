@@ -9,6 +9,8 @@ import { PendingBillsComponent } from './shared/pending-bills/pending-bills.comp
 import { CardComponent } from './shared/card/card.component';
 import { TableComponent } from './shared/table/table.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import {AngularFireModule} from '@angular/fire/compat'
+import { enviroment } from './enviroments/enviroments';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(enviroment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
