@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  font-family: "Poppins";
+  font-style: normal;
+}
+.dashBoard{
+
+  box-sizing: border-box;
+}
+
+.container h1 {
+  margin: 25px 50px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #cbcbcb;
+}
+.pending h1 {
+  color: black;
+}
+
+.bills {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+}
+.billItem {
+  margin-right: 25px;
+}
+.searchBar {
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+.invoicesTable{
+  margin-left: 40px;
+  margin-right: 40px;
+
+}
+hr {
+  border-bottom: 1px solid #797979;
+}

@@ -11,6 +11,9 @@ import { TableComponent } from './shared/table/table.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import {AngularFireModule} from '@angular/fire/compat'
 import { enviroment } from './enviroments/enviroments';
+import { DashBoardComponent } from './dash-board/dash-board.component';
+import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { enviroment } from './enviroments/enviroments';
     PendingBillsComponent,
     CardComponent,
     TableComponent,
-    NavBarComponent
+    NavBarComponent,
+    DashBoardComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,

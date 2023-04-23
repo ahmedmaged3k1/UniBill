@@ -3,3 +3,15 @@
 * {
   margin: 0px 0px;
 }
+a {
+
+  transition: none;
+}
+:root
+{
+  --navWidth : 264px
+}
+main{
+  margin-inline-start: var(--navWidth);
+  width: 100%;
+}

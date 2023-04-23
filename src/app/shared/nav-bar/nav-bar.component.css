@@ -13,55 +13,55 @@ a {
 }
 
 .container {
-
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-
-  padding-right: 30px;
   border-right: 1px solid #797979;
-  width: fit-content;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  width: var(--navWidth);
 }
 
 .routes {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-align-items: center;
-text-align: center;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding-inline: 16px;
 }
 .items {
-  margin: 30px 0px 0px 30px;
-  width: 215px;
-  padding: 10px 10px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 100%;
   border-radius: 8px;
   color: #797979;
   transition: background-color 0.2s ease-in-out;
-
+  text-align: left;
+  padding: 12px ;
+  box-sizing: border-box;
 }
 
-
 .items:hover {
-  color: #ffffff;
-  background-color: #797979;
 
+  background-color: #d7d7d7;
 }
 
 .items:active,
 .items:focus {
   color: #ffffff;
-  background-color: #2952BB;
+  background-color: #2952bb;
   outline: none;
 }
-
-
-
-
-

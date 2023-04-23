@@ -5,6 +5,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { CardComponent } from './shared/card/card.component';
 import { TableComponent } from './shared/table/table.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { DashBoardComponent } from './dash-board/dash-board.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -12,6 +13,8 @@ const routes: Routes = [
   { path: 'card', component: CardComponent },
   { path: 'table', component: TableComponent },
   { path: 'NavBar', component: NavBarComponent },
+  { path: 'DashBoard', component: DashBoardComponent },
+
 
 
 

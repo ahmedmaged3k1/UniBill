@@ -1,0 +1,46 @@
+<div class="container">
+
+
+
+  <div class="navBar">
+    <app-nav-bar></app-nav-bar>
+  </div>
+
+
+  <main class="dashBoard">
+
+    <h1>Dashboard</h1>
+    <hr>
+
+    <div class="pending">
+      <h1>Pending Bills</h1>
+    </div>
+
+    <div class="bills">
+      <div class="billItem">
+        <app-card></app-card>
+      </div>
+      <div class="billItem">
+        <app-card></app-card>
+      </div>
+      <div class="billItem">
+        <app-card></app-card>
+      </div>
+
+    </div>
+    <div class="pending">
+      <h1>Latest Invoices</h1>
+    </div>
+    <div class="searchBar">
+      <app-search-bar></app-search-bar>
+    </div>
+
+    <div class="invoicesTable">
+      <app-table [bills] = "bills"></app-table>
+    </div>
+
+
+
+  </main>
+
+</div>
