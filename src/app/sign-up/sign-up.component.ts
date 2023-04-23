@@ -39,10 +39,13 @@ constructor(private auth : AuthService, private dataService : UserDataService){}
       alert('Please Submit Valid Data');
     }
     
-    this.newUser.email= this.signupForm.get('email').value
-    this.newUser.password= this.signupForm.get('password').value
-    this.newUser.name= this.signupForm.get('fullName').value
-    this.newUser.phoneNumber= this.signupForm.get('phone').value
+  
+    this.newUser = {
+      email : this.signupForm.get('email').value ,
+      password : this.signupForm.get('password').value,
+      name : this.signupForm.get('fullName').value ,
+      phoneNumber :  this.signupForm.get('phone').value
+    }
     console.log(this.newUser)
     this.dataService.addUser(this.newUser)
     this.auth.register(this.signupForm.get('email')?.value, this.signupForm.get('password')?.value)
