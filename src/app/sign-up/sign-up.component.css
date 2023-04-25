@@ -46,6 +46,7 @@
   flex-direction: column;
   margin-bottom: 20px;
   justify-content: center;
+  width: 100%;
 }
 .description h1 {
   font-family: "Montserrat";
@@ -122,4 +123,24 @@ div.errorMessage {
   margin-top: 1px;
   margin-bottom: 2px;
   text-align: center;
+}
+.billing-options {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  align-items: center;
+}
+.billing-options input {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+.billing-options label {
+  vertical-align: middle;
+  margin: 0px;
+  padding: 0px;
+}
+.billing-group {
+  flex-direction: row;
+  display: flex;
 }

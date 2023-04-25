@@ -120,10 +120,34 @@
             Please type a vaild password (Minimum 5 letters)
           </div>
         </div>
-        <button type="submit" >Signup</button>
+
+        <div class="form-group">
+          <label for="telephone">Telephone Billing System</label>
+          <div class="billing-group">
+            <div class="billing-options">
+              <input
+                type="radio"
+                name="billing-system"
+                value="postpaid"
+                id="post-paid"
+              />
+              <label for="post-paid"> Post-paid </label>
+            </div>
+            <div class="billing-options">
+              <input
+                type="radio"
+                name="billing-system"
+                value="prepaid"
+                id="pre-paid"
+              />
+              <label for="pre-paid"> Pre-paid </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit">Signup</button>
 
         <p class="haveAccount">
-        
           Already have an account? <span class="register">Login</span>
         </p>
       </form>
