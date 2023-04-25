@@ -13,6 +13,7 @@ import {AngularFireModule} from '@angular/fire/compat'
 import { enviroment } from './enviroments/enviroments';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SearchBarComponent } from './shared/search-bar/search-bar.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(enviroment.firebaseConfig)
+    AngularFireModule.initializeApp(enviroment.firebaseConfig),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

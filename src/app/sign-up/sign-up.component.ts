@@ -44,7 +44,8 @@ constructor(private auth : AuthService, private dataService : UserDataService){}
       email : this.signupForm.get('email').value ,
       password : this.signupForm.get('password').value,
       name : this.signupForm.get('fullName').value ,
-      phoneNumber :  this.signupForm.get('phone').value
+      phoneNumber :  this.signupForm.get('phone').value,
+      paymentType:0
     }
     console.log(this.newUser)
     this.dataService.addUser(this.newUser)

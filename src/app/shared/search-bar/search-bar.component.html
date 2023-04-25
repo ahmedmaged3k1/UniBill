@@ -1,3 +1,4 @@
 
-  <input class="searchBar" type="text" placeholder="search">
+  <input class="searchBar" [(ngModel)]="searchedString" type="text" placeholder="search">
+  <button (click)="searchBills()">Search</button>
 
