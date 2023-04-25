@@ -16,9 +16,9 @@ export class DashBoardComponent implements OnInit {
   status: String;
   type: String;
   constructor(private dataService: BillDataService) { }
-
   ngOnInit(): void {
     this.getBills();
+
   }
   getBills() {
     this.dataService.getBills().snapshotChanges().pipe(
@@ -29,10 +29,13 @@ export class DashBoardComponent implements OnInit {
       )
     ).subscribe(res=>{
         this.bills=res;
+
     })
   }
-
-
+  recieveBill($event : Bills[])
+  {
+    this.bills=$event
+  }
 
 
 
