@@ -1,5 +1,5 @@
 <div class="payment-box">
-  <form [formGroup]="">
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
     <h1>Payment Information</h1>
     <p>Pay securely with your Bank Account using Visa or Mastercard</p>
     <div class="form-group">
@@ -8,8 +8,24 @@
         id="credit-number"
         placeholder="XXXX-XXXX-XXXX-XXXX"
         type="text"
-        formControlName="cardName"
+        formControlName="creditNumber"
+        [ngClass]="{
+          errorStyle:
+            paymentForm.get('creditNumber').invalid &&
+            (paymentForm.get('creditNumber').dirty ||
+              paymentForm.get('creditNumber').touched)
+        }"
       />
+    </div>
+    <div
+      *ngIf="
+        paymentForm.get('creditNumber').invalid &&
+        (paymentForm.get('creditNumber').dirty ||
+          paymentForm.get('creditNumber').touched)
+      "
+      class="errorMessage"
+    >
+      Please type a vaild Credit Number
     </div>
     <div class="form-group">
       <label for="card-name">Card Name</label>
@@ -18,19 +34,50 @@
         placeholder="Mohab Ahmed"
         type="text"
         formControlName="cardName"
+        [ngClass]="{
+          errorStyle:
+            paymentForm.get('cardName').invalid &&
+            (paymentForm.get('cardName').dirty ||
+              paymentForm.get('cardName').touched)
+        }"
       />
     </div>
-
+    <div
+      *ngIf="
+        paymentForm.get('cardName').invalid &&
+        (paymentForm.get('cardName').dirty ||
+          paymentForm.get('cardName').touched)
+      "
+      class="errorMessage"
+    >
+      Please type a vaild Card Name
+    </div>
     <div class="two-halfs">
       <div>
         <label for="expire-date">Expire Date</label>
         <input
           id="expire-date"
-          placeholder="MM/YY"
-          type="text"
+          type="date"
           formControlName="expireDate"
+          [ngClass]="{
+            errorStyle:
+              paymentForm.get('expireDate').invalid &&
+              (paymentForm.get('expireDate').dirty ||
+                paymentForm.get('expireDate').touched)
+          }"
         />
+        <div
+          *ngIf="
+            paymentForm.get('expireDate').invalid &&
+            (paymentForm.get('expireDate').dirty ||
+              paymentForm.get('expireDate').touched)
+          "
+          class="errorMessage"
+        >
+          Please Enter the date
+        </div>
       </div>
+
       <div>
         <label for="cvv-code">CVV Code</label>
         <input
@@ -38,7 +85,23 @@
           placeholder="XXX"
           type="text"
           formControlName="cvvCode"
+          [ngClass]="{
+            errorStyle:
+              paymentForm.get('cvvCode').invalid &&
+              (paymentForm.get('cvvCode').dirty ||
+                paymentForm.get('cvvCode').touched)
+          }"
         />
+        <div
+          *ngIf="
+            paymentForm.get('cvvCode').invalid &&
+            (paymentForm.get('cvvCode').dirty ||
+              paymentForm.get('cvvCode').touched)
+          "
+          class="errorMessage"
+        >
+          Please Enter the cvv code
+        </div>
       </div>
     </div>
 

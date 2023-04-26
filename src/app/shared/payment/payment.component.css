@@ -104,3 +104,13 @@ form {
   align-items: center;
   border-radius: 10px;
 }
+.errorStyle {
+  border-color: red;
+}
+div.errorMessage {
+  color: red;
+  font-size: 15px;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  text-align: center;
+}
