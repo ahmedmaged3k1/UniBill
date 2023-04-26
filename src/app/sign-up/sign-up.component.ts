@@ -46,7 +46,7 @@ export class SignUpComponent implements OnInit {
       password: this.signupForm.get('password').value,
       name: this.signupForm.get('fullName').value,
       phoneNumber: this.signupForm.get('phone').value,
-      paymentType: 0,
+      paymentType: this.signupForm.get('billingSystem').value,
     };
     console.log(this.newUser);
     this.dataService.addUser(this.newUser);
