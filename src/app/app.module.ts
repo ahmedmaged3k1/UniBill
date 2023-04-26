@@ -16,6 +16,7 @@ import { SearchBarComponent } from './shared/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { ElectricityInvoiceComponent } from './electricity-invoice/electricity-invoice.component';
 import { InvoiceComponent } from './shared/invoice/invoice.component';
+import { PaymentComponent } from './shared/payment/payment.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { InvoiceComponent } from './shared/invoice/invoice.component';
     SearchBarComponent,
     ElectricityInvoiceComponent,
     InvoiceComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
