@@ -1,0 +1,69 @@
+.middle-box {
+  position: absolute;
+  width: 564px;
+  height: 506px;
+  top: 215px;
+  left: 312px;
+  padding: 24px;
+  display: grid;
+  justify-content: space-between;
+  -webkit-justify-content: space-between; /* for Safari and Chrome */
+  gap: 32px;
+  -webkit-gap: 32px; /* for Safari and Chrome */
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}
+
+.uni {
+  width: 44px;
+  height: 15px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12.5112px;
+  line-height: 15px;
+  color: #cbcbcb;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.invoice-id {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 184px;
+}
+
+.invoice {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.035em;
+  color: #2952bb;
+}
+
+.idtitle {
+  width: 59px;
+  height: 18px;
+  padding: 20px;
+  margin-left: 70px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height */
+
+  /* Secondary/Gray Text */
+
+  color: #797979;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}

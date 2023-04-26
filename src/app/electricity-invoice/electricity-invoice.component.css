@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  font-family: "Poppins";
+  font-style: normal;
+}
+
+.container h1 {
+  margin: 25px 50px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #cbcbcb;
+}
+hr {
+  border-bottom: 1px solid #797979;
+}
+.invoice h1 {
+  color: black;
+}

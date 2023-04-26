@@ -14,6 +14,8 @@ import { enviroment } from './enviroments/enviroments';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
+import { ElectricityInvoiceComponent } from './electricity-invoice/electricity-invoice.component';
+import { InvoiceComponent } from './shared/invoice/invoice.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     DashBoardComponent,
     SearchBarComponent,
+    ElectricityInvoiceComponent,
+    InvoiceComponent,
   ],
   imports: [
     BrowserModule,

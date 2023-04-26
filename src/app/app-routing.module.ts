@@ -6,6 +6,8 @@ import { CardComponent } from './shared/card/card.component';
 import { TableComponent } from './shared/table/table.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { DashBoardComponent } from './dash-board/dash-board.component';
+import { ElectricityInvoiceComponent } from './electricity-invoice/electricity-invoice.component';
+import { InvoiceComponent } from './shared/invoice/invoice.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,16 +16,12 @@ const routes: Routes = [
   { path: 'table', component: TableComponent },
   { path: 'NavBar', component: NavBarComponent },
   { path: 'DashBoard', component: DashBoardComponent },
-
-
-
-
-
-
+  { path: 'ElectricityInvoice', component: ElectricityInvoiceComponent },
+  { path: 'Invoice', component: InvoiceComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

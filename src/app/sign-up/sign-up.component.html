@@ -130,6 +130,7 @@
                 name="billing-system"
                 value="postpaid"
                 id="post-paid"
+                formControlName="billingSystem"
               />
               <label for="post-paid"> Post-paid </label>
             </div>
@@ -139,9 +140,20 @@
                 name="billing-system"
                 value="prepaid"
                 id="pre-paid"
+                formControlName="billingSystem"
               />
               <label for="pre-paid"> Pre-paid </label>
             </div>
+          </div>
+          <div
+            *ngIf="
+              signupForm.get('billingSystem').invalid &&
+              (signupForm.get('billingSystem').dirty ||
+                signupForm.get('billingSystem').touched)
+            "
+            class="errorMessage"
+          >
+            Please select a billing system
           </div>
         </div>
 
