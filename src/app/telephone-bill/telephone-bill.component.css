@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  font-family: "Poppins";
+  font-style: normal;
+}
+.telephone
+{
+  box-sizing:border-box;
+}
+
+.container h1 {
+  margin: 25px 50px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #cbcbcb;
+}
+.tHeader h1 {
+  color: black;
+}
+
+hr {
+  border-bottom: 1px solid #797979;
+}
+
+.teleBills{
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+}

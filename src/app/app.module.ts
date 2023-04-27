@@ -13,6 +13,8 @@ import {AngularFireModule} from '@angular/fire/compat'
 import { enviroment } from './enviroments/enviroments';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+import { TelephoneBillComponent } from './telephone-bill/telephone-bill.component';
+import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { SearchBarComponent } from './shared/search-bar/search-bar.component';
     NavBarComponent,
     DashBoardComponent,
     SearchBarComponent,
+    TelephoneBillComponent,
+    TelephoneCardComponent,
   ],
   imports: [
     BrowserModule,
