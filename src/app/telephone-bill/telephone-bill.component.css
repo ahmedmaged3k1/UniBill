@@ -2,7 +2,10 @@
   display: flex;
   font-family: "Poppins";
   font-style: normal;
-  width: 100%;
+}
+.telephone
+{
+  box-sizing:border-box;
 }
 
 .container h1 {
@@ -12,9 +15,16 @@
   line-height: 36px;
   color: #cbcbcb;
 }
+.tHeader h1 {
+  color: black;
+}
+
 hr {
   border-bottom: 1px solid #797979;
 }
-.invoice h1 {
-  color: black;
+
+.teleBills{
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
 }

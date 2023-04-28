@@ -1,11 +1,12 @@
 <div class="container">
   <div class="leftContainer">
-    <div class="imgContainer">
-    <span class="image">  <img src="../../../assets/Union.svg" alt=""> </span>
+    <div  class="imgContainer">
+    <span class="image">  <img [src]="imgSrc" alt="lol"> </span>
     </div>
-    <p>Electricity</p>
-    <h3>234 EGP</h3>
+
+    <p>{{bill.type}}</p>
+    <h3>{{bill.amount}} EGP</h3>
   </div>
 
-  <div class="rightContainer"><span class="date">5/4/2023</span></div>
+  <div class="rightContainer"><span class="date">{{bill.dueDate}}</span></div>
 </div>
