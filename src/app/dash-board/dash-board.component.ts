@@ -19,19 +19,10 @@ export class DashBoardComponent implements OnInit {
   billType: String = ''
   constructor(private dataService: BillDataService, private route: ActivatedRoute) { }
   ngOnInit(): void {
+    this.getBills()
     this.billType = this.route.snapshot.params['id'] || '';
 
-    if (this.billType.toLowerCase() === "water") {
-      this.getWaterBills();
-    }
 
-    else if (this.billType.toLowerCase() === "electricty") {
-      this.getElectricityBills()
-    }
-
-    else if (this.billType.toLowerCase() === "telephone") {
-      this.getTelephoneBills()
-    }
 
 
 
@@ -55,6 +46,17 @@ export class DashBoardComponent implements OnInit {
 
 
       })
+      if (this.billType.toLowerCase() === "water") {
+        this.getWaterBills();
+      }
+
+      else if (this.billType.toLowerCase() === "electricty") {
+        this.getElectricityBills()
+      }
+
+      else if (this.billType.toLowerCase() === "telephone") {
+        this.getTelephoneBills()
+      }
 
     })
 
@@ -62,19 +64,26 @@ export class DashBoardComponent implements OnInit {
 
   getElectricityBills() {
 
-    let ElectricityBills = this.bills.filter(b => b.type.toLowerCase() === "electricty")
+    let ElectricityBills = this.bills.filter(b => b.type.toLowerCase() === "electrcity")
+    console.log(ElectricityBills);
+
+    this.bills=ElectricityBills;
     return ElectricityBills;
   }
   getWaterBills() {
+    console.log(this.bills);
 
 
 
     let waterBills = this.bills.filter(b => b.type.toLowerCase() === "water")
+    console.log(waterBills);
+    this.bills=waterBills;
     return waterBills;
   }
 
   getTelephoneBills() {
     let telephoneBills = this.bills.filter(b => b.type.toLowerCase() === "telephone")
+    this.bills=telephoneBills;
     return telephoneBills;
   }
 
