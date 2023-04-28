@@ -1,0 +1,41 @@
+.error-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 500px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #2952bb;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #2952bb;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  color: #797979;
+}

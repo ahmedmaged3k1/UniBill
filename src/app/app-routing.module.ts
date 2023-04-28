@@ -9,6 +9,7 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
 import { ElectricityInvoiceComponent } from './electricity-invoice/electricity-invoice.component';
 import { InvoiceComponent } from './shared/invoice/invoice.component';
 import { PaymentComponent } from './shared/payment/payment.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'ElectricityInvoice', component: ElectricityInvoiceComponent },
   { path: 'Invoice', component: InvoiceComponent },
   { path: 'Payment', component: PaymentComponent },
+  { path: '404', component: ErrorComponent },
 ];
 
 @NgModule({

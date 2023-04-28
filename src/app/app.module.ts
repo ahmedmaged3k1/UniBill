@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { ElectricityInvoiceComponent } from './electricity-invoice/electricity-invoice.component';
 import { InvoiceComponent } from './shared/invoice/invoice.component';
 import { PaymentComponent } from './shared/payment/payment.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { PaymentComponent } from './shared/payment/payment.component';
     ElectricityInvoiceComponent,
     InvoiceComponent,
     PaymentComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
