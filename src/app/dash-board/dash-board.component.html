@@ -17,16 +17,9 @@
     </div>
 
     <div class="bills">
-      <div class="billItem">
-        <app-card></app-card>
+      <div *ngFor ="let bill of bills" class="billItem">
+        <app-card [bill]="bill"></app-card>
       </div>
-      <div class="billItem">
-        <app-card></app-card>
-      </div>
-      <div class="billItem">
-        <app-card></app-card>
-      </div>
-
     </div>
     <div class="pending">
       <h1>Latest Invoices</h1>

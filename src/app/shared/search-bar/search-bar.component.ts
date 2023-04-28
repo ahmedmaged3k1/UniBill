@@ -17,10 +17,10 @@ export class SearchBarComponent {
   ngOnInit(): void {
   }
 
-  searchBills(){
-    this.dataService.searchString=this.searchedString
-    this.dataService.searchByName().subscribe((b: Bills[]) => {
-      this.billList.emit(b)
-    });
-  }
+  // searchBills(){
+  //   this.dataService.searchString=this.searchedString
+  //   this.dataService.searchByName().subscribe((b: Bills[]) => {
+  //     this.billList.emit(b)
+  //   });
+  // }
 }

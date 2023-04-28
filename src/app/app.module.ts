@@ -19,8 +19,8 @@ import { InvoiceComponent } from './shared/invoice/invoice.component';
 import { PaymentComponent } from './shared/payment/payment.component';
 import { TelephoneBillComponent } from './telephone-bill/telephone-bill.component';
 import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,11 @@ import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.c
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(enviroment.firebaseConfig),
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
