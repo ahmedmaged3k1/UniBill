@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { ElectricityInvoiceComponent } from './electricity-invoice/electricity-invoice.component';
 import { InvoiceComponent } from './shared/invoice/invoice.component';
 import { PaymentComponent } from './shared/payment/payment.component';
+import { ErrorComponent } from './error/error.component';
 import { TelephoneBillComponent } from './telephone-bill/telephone-bill.component';
 import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,6 +36,7 @@ import { RouterModule } from '@angular/router';
     ElectricityInvoiceComponent,
     InvoiceComponent,
     PaymentComponent,
+    ErrorComponent,
     TelephoneBillComponent,
     TelephoneCardComponent,
   ],

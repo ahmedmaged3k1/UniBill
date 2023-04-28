@@ -2,6 +2,7 @@ img {
   width: 115px;
   margin: 30px 25px;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -36,32 +37,39 @@ a {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  align-items: center;
   text-align: center;
   box-sizing: border-box;
   padding-inline: 16px;
 }
-.items {
-  margin-bottom: 15px;
-  margin-right: 5px;
-  margin-left: 5px;
+
+.items a {
+  display: flex;
+  align-items: center;
   width: 100%;
+  height: 60%;
   border-radius: 8px;
   color: #797979;
   transition: background-color 0.2s ease-in-out;
   text-align: left;
-  padding: 12px ;
   box-sizing: border-box;
+  padding: 0 10px;
 }
 
-.items:hover {
-
+.items a:hover {
   background-color: #d7d7d7;
 }
 
-.items:active,
-.items:focus {
+.items a:active,
+.items a:focus {
   color: #ffffff;
   background-color: #2952bb;
   outline: none;
+}
+.icons {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+a:focus {
+  color: white;
 }
