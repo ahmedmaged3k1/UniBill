@@ -120,10 +120,46 @@
             Please type a vaild password (Minimum 5 letters)
           </div>
         </div>
-        <button type="submit" >Signup</button>
+
+        <div class="form-group">
+          <label for="telephone">Telephone Billing System</label>
+          <div class="billing-group">
+            <div class="billing-options">
+              <input
+                type="radio"
+                name="billing-system"
+                value="0"
+                id="post-paid"
+                formControlName="billingSystem"
+              />
+              <label for="post-paid"> Post-paid </label>
+            </div>
+            <div class="billing-options">
+              <input
+                type="radio"
+                name="billing-system"
+                value="1"
+                id="pre-paid"
+                formControlName="billingSystem"
+              />
+              <label for="pre-paid"> Pre-paid </label>
+            </div>
+          </div>
+          <div
+            *ngIf="
+              signupForm.get('billingSystem').invalid &&
+              (signupForm.get('billingSystem').dirty ||
+                signupForm.get('billingSystem').touched)
+            "
+            class="errorMessage"
+          >
+            Please select a billing system
+          </div>
+        </div>
+
+        <button type="submit">Signup</button>
 
         <p class="haveAccount">
-        
           Already have an account? <span class="register">Login</span>
         </p>
       </form>

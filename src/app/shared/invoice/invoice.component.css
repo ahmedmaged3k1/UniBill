@@ -1,0 +1,134 @@
+.middle-box {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  gap: 32px;
+  position: absolute;
+  width: 600px;
+  height: 506px;
+  left: 312px;
+  top: 215px;
+  background: #ffffff;
+  border: 1px solid #cbcbcb;
+  border-radius: 20px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 12.5112px;
+  line-height: 15px;
+  color: #cbcbcb;
+}
+.invoice-data {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.035em;
+  color: #2952bb;
+}
+.invoice-id-title,
+.second-title,
+.third-title {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #797979;
+}
+.invoice-id,
+.name,
+.phone,
+.address,
+.apartment,
+.due,
+.new,
+.old,
+.units {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.charge {
+  width: 77px;
+  height: 60px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  color: #afc6ff;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  padding: 7px;
+}
+.amount-title,
+.not-paid-title {
+  width: 134px;
+  height: 18px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #afc6ff;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  padding-left: 30px;
+}
+.line {
+  width: 74px;
+  height: 0px;
+  border: 1px solid rgba(175, 198, 255, 0.5);
+  transform: rotate(90deg);
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.blue-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px 27px;
+  gap: 16px;
+  width: 500px;
+  height: auto;
+  background: #2952bb;
+  border-radius: 10px;
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.money {
+  width: 83px;
+  height: 36px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #ffffff;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  padding-left: 25px;
+}

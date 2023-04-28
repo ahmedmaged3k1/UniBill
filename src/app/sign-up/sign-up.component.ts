@@ -11,24 +11,26 @@ import { User } from 'src/app/models/user';
 })
 export class SignUpComponent implements OnInit {
   signupForm: FormGroup;
-    // Firebase Auth Elements 
-  email : string = ' ';
-  password : string = ' ';
-   newUser : User 
-constructor(private auth : AuthService, private dataService : UserDataService){}
+  // Firebase Auth Elements
+  email: string = ' ';
+  password: string = ' ';
+  newUser: User;
+
+  constructor(
+    private auth: AuthService,
+    private dataService: UserDataService
+  ) {}
 
   ngOnInit() {
     this.signupForm = new FormGroup({
-      fullName: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      phone: new FormControl(null, [
-        Validators.required,
-        Validators.pattern(/^\d+$/),
-      ]),
-      password: new FormControl(null, [
+      fullName: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      phone: new FormControl('', Validators.required),
+      password: new FormControl('', [
         Validators.required,
         Validators.minLength(5),
       ]),
+      billingSystem: new FormControl('', Validators.required),
     });
   }
   onSubmit() {
@@ -38,23 +40,24 @@ constructor(private auth : AuthService, private dataService : UserDataService){}
     if (this.signupForm.invalid) {
       alert('Please Submit Valid Data');
     }
-    
-  
+
     this.newUser = {
-      email : this.signupForm.get('email').value ,
-      password : this.signupForm.get('password').value,
-      name : this.signupForm.get('fullName').value ,
-      phoneNumber :  this.signupForm.get('phone').value
-    }
-    console.log(this.newUser)
-    this.dataService.addUser(this.newUser)
-    this.auth.register(this.signupForm.get('email')?.value, this.signupForm.get('password')?.value)
-
-
+      email: this.signupForm.get('email').value,
+      password: this.signupForm.get('password').value,
+      name: this.signupForm.get('fullName').value,
+      phoneNumber: this.signupForm.get('phone').value,
+      paymentType: this.signupForm.get('billingSystem').value,
+    };
+    console.log(this.newUser);
+    this.dataService.addUser(this.newUser);
+    this.auth.register(
+      this.signupForm.get('email')?.value,
+      this.signupForm.get('password')?.value
+    );
   }
-  // Firebase Functions 
-  register(){
-    console.log("clicked")
-    this.auth.register(this.email, this.password)
+  // Firebase Functions
+  register() {
+    console.log('clicked');
+    this.auth.register(this.email, this.password);
   }
 }

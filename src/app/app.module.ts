@@ -13,6 +13,10 @@ import {AngularFireModule} from '@angular/fire/compat'
 import { enviroment } from './enviroments/enviroments';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
+import { ElectricityInvoiceComponent } from './electricity-invoice/electricity-invoice.component';
+import { InvoiceComponent } from './shared/invoice/invoice.component';
+import { PaymentComponent } from './shared/payment/payment.component';
 import { TelephoneBillComponent } from './telephone-bill/telephone-bill.component';
 import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.component';
 
@@ -28,6 +32,9 @@ import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.c
     NavBarComponent,
     DashBoardComponent,
     SearchBarComponent,
+    ElectricityInvoiceComponent,
+    InvoiceComponent,
+    PaymentComponent,
     TelephoneBillComponent,
     TelephoneCardComponent,
   ],
@@ -35,7 +42,8 @@ import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.c
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(enviroment.firebaseConfig)
+    AngularFireModule.initializeApp(enviroment.firebaseConfig),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
