@@ -21,11 +21,6 @@ export class DashBoardComponent implements OnInit {
   ngOnInit(): void {
     this.getBills()
     this.billType = this.route.snapshot.params['id'] || '';
-
-
-
-
-
   }
   getBills() {
 
