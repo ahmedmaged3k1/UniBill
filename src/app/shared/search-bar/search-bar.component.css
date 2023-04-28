@@ -4,3 +4,17 @@ input{
   border: 1px solid #CBCBCB;
   border-radius: 10px;
 }
+.blue-button {
+  background-color: #007bff; /* blue color */
+  border: none;
+  color: #fff; /* text color */
+  padding: 10px 20px; /* button padding */
+  text-align: center;
+  margin-left: 15px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; /* font size */
+  border-radius: 5px; /* rounded corners */
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* add shadow */
+}
