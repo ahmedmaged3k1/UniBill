@@ -22,6 +22,8 @@ import { TelephoneBillComponent } from './telephone-bill/telephone-bill.componen
 import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { UsersTableComponent } from './Admin/users-table/users-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,8 @@ import { RouterModule } from '@angular/router';
     ErrorComponent,
     TelephoneBillComponent,
     TelephoneCardComponent,
+    AdminDashboardComponent,
+    UsersTableComponent,
   ],
   imports: [
     BrowserModule,

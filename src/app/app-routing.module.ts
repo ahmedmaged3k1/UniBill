@@ -12,6 +12,7 @@ import { PaymentComponent } from './shared/payment/payment.component';
 import { ErrorComponent } from './error/error.component';
 import { TelephoneBillComponent } from './telephone-bill/telephone-bill.component';
 import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.component';
+import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -27,6 +28,8 @@ const routes: Routes = [
   { path: '404', component: ErrorComponent },
   { path: 'Telephone-Bill', component: TelephoneBillComponent },
   { path: 'Telephone-Card', component: TelephoneCardComponent },
+  { path: 'admin', component: AdminDashboardComponent },
+
 
 ];
 

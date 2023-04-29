@@ -1,0 +1,20 @@
+<div class="container">
+
+  <app-search-bar></app-search-bar>
+<table class ="tableContainer">
+  <thead>
+    <tr>
+      <th>User Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor = "let user of users">
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phoneNumber}}</td>
+
+  </tr>
+</table>
+</div>

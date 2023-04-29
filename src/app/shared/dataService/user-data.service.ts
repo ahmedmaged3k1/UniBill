@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import{AngularFirestore } from '@angular/fire/compat/firestore'
 import { User } from 'src/app/models/user';
@@ -6,10 +7,16 @@ import { User } from 'src/app/models/user';
   providedIn: 'root'
 })
 export class UserDataService {
+  usersUrl = 'https://firestore.googleapis.com/v1/projects/unibell-5f28c/databases/(default)/documents/Users'
 
-  constructor(private afs :  AngularFirestore) { }
+
+  constructor(private afs :  AngularFirestore, private http :HttpClient) { }
 
   addUser(user : User){
     return this.afs.collection('/Users').add(user)
+  }
+
+  getUsers (){
+    return this.http.get<any>(this.usersUrl);
   }
 }
