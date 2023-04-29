@@ -32,7 +32,7 @@
   <tr class="row">
     <td class="col">
       <span class="third-title">Due Date</span>
-      <span class="due">12/10/2023</span>
+      <span class="due">{{ bill?.dueDate }}</span>
     </td>
     <td class="col">
       <span class="third-title">New Reading</span>
@@ -57,11 +57,11 @@
           <td><hr class="line" /></td>
           <td class="col">
             <span class="amount-title">Amount</span>
-            <span class="money">245.00</span>
+            <span class="money">{{ bill?.amount }}</span>
           </td>
           <td class="col">
             <span class="not-paid-title">If not paid in Due Date</span>
-            <span class="money">250.00</span>
+            <span class="money">{{ bill?.notPaid }}</span>
           </td>
         </tr>
       </table>

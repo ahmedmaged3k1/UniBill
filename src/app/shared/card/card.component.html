@@ -1,12 +1,14 @@
 <div class="container">
   <div class="leftContainer">
-    <div  class="imgContainer">
-    <span class="image">  <img [src]="imgSrc" alt="lol"> </span>
+    <div class="imgContainer">
+      <span class="image"> <img [src]="imgSrc" alt="lol" /> </span>
     </div>
 
-    <p>{{bill.type}}</p>
-    <h3>{{bill.amount}} EGP</h3>
+    <p>{{ bill.type }}</p>
+    <h3>{{ bill.amount }} EGP</h3>
   </div>
 
-  <div class="rightContainer"><span class="date">{{bill.dueDate}}</span></div>
+  <div class="rightContainer">
+    <span class="date">{{ bill.dueDate }}</span>
+  </div>
 </div>

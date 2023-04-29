@@ -1,24 +1,34 @@
-<table class ="tableContainer">
-<thead>
-  <tr>
-    <th>Invoice Id</th>
-    <th>Date</th>
-    <th>Amount</th>
-    <th>Due Date</th>
-    <th>Status</th>
-    <th>Type</th>
-  </tr>
-</thead>
-
-  <tr *ngFor="let bill of bills">
-
-    <td>{{bill.id}}</td>
-    <td>{{bill.date}}</td>
-    <td>{{bill.amount}}</td>
-    <td>{{bill.dueDate}}</td>
-    <td>{{bill.status}}</td>
-    <td>{{bill.type}}</td>
-
-  </tr>
-
+<table class="tableContainer">
+  <thead>
+    <tr>
+      <th>Invoice Id</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bill of bills">
+      <td (click)="navigateToBillDetails(bill.id)" style="cursor: pointer">
+        {{ bill.id }}
+      </td>
+      <td (click)="navigateToBillDetails(bill.id)" style="cursor: pointer">
+        {{ bill.date }}
+      </td>
+      <td (click)="navigateToBillDetails(bill.id)" style="cursor: pointer">
+        {{ bill.amount }}
+      </td>
+      <td (click)="navigateToBillDetails(bill.id)" style="cursor: pointer">
+        {{ bill.dueDate }}
+      </td>
+      <td (click)="navigateToBillDetails(bill.id)" style="cursor: pointer">
+        {{ bill.status }}
+      </td>
+      <td (click)="navigateToBillDetails(bill.id)" style="cursor: pointer">
+        {{ bill.type }}
+      </td>
+    </tr>
+  </tbody>
 </table>
