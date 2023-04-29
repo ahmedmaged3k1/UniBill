@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BillDataService } from '../shared/dataService/bill-data.service';
 import { Bills } from '../models/Bills';
 import { map } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
-
+import { ActivatedRoute, NavigationEnd } from '@angular/router';
+  import { Router } from '@angular/router';
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',
@@ -17,10 +17,16 @@ export class DashBoardComponent implements OnInit {
   status: String;
   type: String;
   billType: String = ''
-  constructor(private dataService: BillDataService, private route: ActivatedRoute) { }
+  constructor(private dataService: BillDataService, private route: ActivatedRoute,private readonly router: Router,) { }
   ngOnInit(): void {
-    this.getBills()
-    this.billType = this.route.snapshot.params['id'] || '';
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.getBills()
+        this.billType = this.route.snapshot.params['id'] || '';
+      }
+  });
+
+
   }
   getBills() {
 

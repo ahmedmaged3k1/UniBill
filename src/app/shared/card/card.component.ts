@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
   }
   ngOnInit(): void {
 
-
+    
     if (this.bill.type.toLowerCase() === "water") {
 
       this.imgSrc = "../../../assets/BlueWater.svg";

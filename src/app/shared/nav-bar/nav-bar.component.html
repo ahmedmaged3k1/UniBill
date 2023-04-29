@@ -3,78 +3,29 @@
     <img src="../../../assets/Logo.svg" alt="" />
   </div>
   <div class="routes">
-    <div class="items" (click)="onDashboardClicked()">
-      <a routerLink="/Dash-Board">
-        <img
-          *ngIf="activeLink !== '/Dash-Board'"
-          src="../../../assets/Dash.svg"
-          alt=""
-          class="icons"
-        />
-
-        <img
-          *ngIf="activeLink === '/Dash-Board'"
-          src="../../../assets/Dashwhite.svg"
-          alt=""
-          class="icons"
-        />
-
+    <div class="items">
+      <a routerLink="/Dashboard">
+        <img src="../../../assets/dash.svg" alt="" class="icons" />
         Dashboard
       </a>
     </div>
-    <div class="items" (click)="onElectricityClicked()">
+    <div class="items">
       <a routerLink="/Dashboard">
-        <img
-          *ngIf="!electricityClicked"
-          src="../../../assets/Lightning.svg"
-          alt=""
-          class="icons"
-        />
-        <img
-          *ngIf="electricityClicked"
-          src="../../../assets/Lightningwhite.svg"
-          alt=""
-          class="icons"
-        />
-
-        Electricity Bills
-      </a>
+        <img src="../../../assets/Lightning.svg" alt="" class="icons" />
+        Electricity Bills</a
+      >
     </div>
-    <div class="items" (click)="onWaterClicked()">
+    <div class="items">
       <a routerLink="/Dashboard">
-        <img
-          *ngIf="!waterClicked"
-          src="../../../assets/Water.svg"
-          alt=""
-          class="icons"
-        />
-        <img
-          *ngIf="waterClicked"
-          src="../../../assets/Waterwhite.svg"
-          alt=""
-          class="icons"
-        />
-
-        Water Bills
-      </a>
+        <img src="../../../assets/Water.svg" alt="" class="icons" />
+        Water Bills</a
+      >
     </div>
-    <div class="items" (click)="onTelephoneClicked()">
+    <div class="items">
       <a routerLink="/Dashboard">
-        <img
-          *ngIf="!telephoneClicked"
-          src="../../../assets/Call.svg"
-          alt=""
-          class="icons"
-        />
-        <img
-          *ngIf="telephoneClicked"
-          src="../../../assets/Callwhite.svg"
-          alt=""
-          class="icons"
-        />
-
-        Telephone Bills
-      </a>
+        <img src="../../../assets/Call.svg" alt="" class="icons" />
+        Telephone Bills</a
+      >
     </div>
   </div>
 </div>
