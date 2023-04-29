@@ -7,21 +7,19 @@
   font-size: 13px;
   line-height: 150%;
   text-align: center;
-  width: 500px;
+  width: 100%;
   border-radius: 4px;
 }
 th {
-
   color: #797979;
 }
-td,th {
-
+td,
+th {
   padding: 20px 10px;
 }
 table {
   border-collapse: collapse;
 }
-table tr{
+table tr {
   border-bottom: 1px solid #cbcbcb;
 }
-

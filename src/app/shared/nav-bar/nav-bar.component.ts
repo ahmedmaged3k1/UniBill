@@ -9,10 +9,10 @@ import { NavigationEnd, Router } from '@angular/router';
 export class NavBarComponent {
   activeLink: string = '';
   constructor(private readonly router: Router) {
-    router.events.subscribe((event) => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeLink = event.url;
-        console.log(this.activeLink);
+        console.log('ACTIVEEEEEE' + ' ' + this.activeLink);
       }
     });
   }

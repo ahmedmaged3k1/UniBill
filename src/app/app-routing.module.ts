@@ -22,16 +22,16 @@ const routes: Routes = [
   { path: 'Nav-Bar', component: NavBarComponent },
   { path: 'Dash-Board', component: DashBoardComponent },
   { path: 'Dash-Board/:id', component: DashBoardComponent },
-  { path: 'Bill', component: ElectricityInvoiceComponent },
-  { path: 'Bill/:id', component: ElectricityInvoiceComponent },
+  { path: 'ElectricityBill', component: ElectricityInvoiceComponent },
+  { path: 'ElectricityBill/:id', component: ElectricityInvoiceComponent },
   { path: 'Invoice', component: InvoiceComponent },
   { path: 'Invoice/:id', component: InvoiceComponent },
   { path: 'Payment', component: PaymentComponent },
   { path: '404', component: ErrorComponent },
   { path: 'Telephone-Bill', component: TelephoneBillComponent },
+  { path: 'Telephone-Bill/:id', component: TelephoneBillComponent },
   { path: 'Telephone-Card', component: TelephoneCardComponent },
   { path: 'admin', component: AdminDashboardComponent },
-
 ];
 
 @NgModule({

@@ -29,8 +29,11 @@ export class InvoiceComponent implements OnInit {
         amount: res.fields.amount.stringValue,
         notPaid: res.fields.amount.stringValue,
         dueDate: res.fields.dueDate.stringValue,
+        type: res.fields.type.stringValue,
       };
       this.bill.notPaid = parseFloat(this.bill.amount) + 200;
+      console.log('this is the type' + ' ' + res.fields.type.stringValue);
+
       return this.bill;
     });
   }
