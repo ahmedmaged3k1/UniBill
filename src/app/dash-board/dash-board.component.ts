@@ -3,7 +3,7 @@ import { BillDataService } from '../shared/dataService/bill-data.service';
 import { Bills } from '../models/Bills';
 import { map } from 'rxjs';
 import { ActivatedRoute, NavigationEnd } from '@angular/router';
-  import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',
@@ -17,16 +17,26 @@ export class DashBoardComponent implements OnInit {
   status: String;
   type: String;
   billType: String = ''
-  constructor(private dataService: BillDataService, private route: ActivatedRoute,private readonly router: Router,) { }
+  constructor(private dataService: BillDataService, private route: ActivatedRoute, private router: Router) {
+    this.getBills();
+
+  }
   ngOnInit(): void {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.getBills()
-        this.billType = this.route.snapshot.params['id'] || '';
-      }
-  });
+    this.route.params.subscribe(p => {
+      this.billType = p['id']||'';
+      console.log(this.billType);
+      this.getBills()
+
+    });
+    // this.router.events.subscribe((event) => {
+
+    //   if (event instanceof NavigationEnd) {
 
 
+
+
+    //   }
+    // });
   }
   getBills() {
 
@@ -48,16 +58,21 @@ export class DashBoardComponent implements OnInit {
 
       })
       if (this.billType.toLowerCase() === "water") {
+        console.log("aloo function water");
+
         this.getWaterBills();
       }
 
       else if (this.billType.toLowerCase() === "electricty") {
+        console.log("aloo function electricity");
         this.getElectricityBills()
+
       }
 
       else if (this.billType.toLowerCase() === "telephone") {
         this.getTelephoneBills()
       }
+
 
     })
 
@@ -65,28 +80,25 @@ export class DashBoardComponent implements OnInit {
 
   getElectricityBills() {
 
-    let ElectricityBills = this.bills.filter(b => b.type.toLowerCase() === "electrcity")
-    console.log(ElectricityBills);
-
-    this.bills=ElectricityBills;
-    return ElectricityBills;
-  }
-  getWaterBills() {
+    let ElectricityBills = this.bills.filter(b => b.type.toLowerCase() === "electrcity");
+    this.bills = ElectricityBills;
     console.log(this.bills);
 
-
-
+  }
+  getWaterBills() {
     let waterBills = this.bills.filter(b => b.type.toLowerCase() === "water")
-    console.log(waterBills);
-    this.bills=waterBills;
-    return waterBills;
+    this.bills = waterBills;
+    console.log(this.bills);
+
   }
 
   getTelephoneBills() {
     let telephoneBills = this.bills.filter(b => b.type.toLowerCase() === "telephone")
-    this.bills=telephoneBills;
-    return telephoneBills;
+    this.bills = telephoneBills;
+    console.log(this.bills);
+
   }
+
 
 
 
