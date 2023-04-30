@@ -1,0 +1,34 @@
+<app-nav-bar> </app-nav-bar>
+<div class="frame">
+  <div class="main">
+    <h1>Add bill details:</h1>
+  </div>
+
+  <div class="inputs-container">
+    <div class="text">
+      <label for="billType">Bill Type</label>
+      <select id="billType">
+        <option value="option1" selected>Electricity</option>
+        <option value="option2">Telephone</option>
+        <option value="option3">Water</option>
+      </select>
+    </div>
+
+    <div class="text">
+      <label for="amount">Amount</label>
+      <input type="text" id="amount" name="amount" />
+    </div>
+
+    <div class="text">
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" />
+    </div>
+
+    <div class="text">
+      <label for="dueDate">Due Date</label>
+      <input type="date" id="dueDate" name="dueDate" />
+    </div>
+  </div>
+
+  <button type="submit" class="bill-btn">Add new bill</button>
+</div>

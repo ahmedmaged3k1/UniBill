@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { UsersTableComponent } from './Admin/users-table/users-table.component';
+import { AddBillComponent } from './Admin/add-bill/add-bill.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { UsersTableComponent } from './Admin/users-table/users-table.component';
     TelephoneCardComponent,
     AdminDashboardComponent,
     UsersTableComponent,
+    AddBillComponent,
   ],
   imports: [
     BrowserModule,

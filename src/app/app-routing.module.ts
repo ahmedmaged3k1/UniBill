@@ -13,6 +13,7 @@ import { ErrorComponent } from './error/error.component';
 import { TelephoneBillComponent } from './telephone-bill/telephone-bill.component';
 import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { AddBillComponent } from './Admin/add-bill/add-bill.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'Telephone-Bill', component: TelephoneBillComponent },
   { path: 'Telephone-Bill/:id', component: TelephoneBillComponent },
   { path: 'Telephone-Card', component: TelephoneCardComponent },
+  { path: 'Add-Bill', component: AddBillComponent },
   { path: 'admin', component: AdminDashboardComponent },
 ];
 
