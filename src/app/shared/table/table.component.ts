@@ -14,15 +14,15 @@ export class TableComponent {
   @Input() searchedBills;
 
   navigateToBillDetails(billId: number) {
-    if (this.bills[0].type === 'Electrcity') {
-      this.router.navigate(['/ElectricityBill', billId]);
-    } else if (this.bills[0].type === 'water') {
-      this.router.navigate(['/ElectricityBill', billId]);
-    } else if (this.bills[0].type === 'Telephone') {
+    const bill = this.bills.find((b) => b.id === billId);
+    console.log('TYPE' + ' ' + bill.type);
+    if (bill.type === 'Electrcity') {
+      this.router.navigate(['/Electricity-Bill', billId]);
+    } else if (bill.type === 'water') {
+      this.router.navigate(['/Electricity-Bill', billId]);
+    } else if (bill.type === 'Telephone') {
       this.router.navigate(['/Telephone-Bill', billId]);
     }
-    console.log('IN CONDITION' + ' ' + this.bills[0].type === 'Electrcity');
-    console.log('IN TABLEEEEEEE' + ' ' + this.bills[0].type);
   }
   ngOnInit(): void {}
 }

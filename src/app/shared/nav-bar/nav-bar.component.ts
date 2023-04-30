@@ -12,7 +12,7 @@ export class NavBarComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeLink = event.url;
-        console.log('ACTIVEEEEEE' + ' ' + this.activeLink);
+        console.log(this.activeLink);
       }
     });
   }
