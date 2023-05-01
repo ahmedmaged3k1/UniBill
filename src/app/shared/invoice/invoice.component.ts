@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BillDataService } from '../dataService/bill-data.service';
 
 @Component({
@@ -13,7 +13,8 @@ export class InvoiceComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private billDataService: BillDataService
+    private billDataService: BillDataService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -29,9 +30,16 @@ export class InvoiceComponent implements OnInit {
         amount: res.fields.amount.stringValue,
         notPaid: res.fields.amount.stringValue,
         dueDate: res.fields.dueDate.stringValue,
+        type: res.fields.type.stringValue,
       };
       this.bill.notPaid = parseFloat(this.bill.amount) + 200;
+      console.log('this is the type' + ' ' + res.fields.type.stringValue);
+
       return this.bill;
     });
+  }
+  payPendingBill() {
+    // Navigate to another component
+    this.router.navigate(['/Payment']);
   }
 }

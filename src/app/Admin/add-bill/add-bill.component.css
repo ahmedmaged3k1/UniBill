@@ -1,0 +1,62 @@
+.frame {
+  position: absolute;
+  left: 30%;
+  top: 10%;
+  font-style: normal;
+  font-family: "Poppins";
+  border: 1px solid #cbcbcb;
+  border-radius: 4px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  display: flex;
+  font-weight: 500;
+  font-size: 10px;
+  justify-content: left;
+  margin-right: auto;
+  padding: 40px;
+}
+
+.text {
+  display: flex;
+  color: #000000;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.text input[type="text"],
+.text input[type="date"] {
+  background: #ffffff;
+  border: 1px solid #797979;
+  border-radius: 4px;
+}
+.bill-btn {
+  margin: 20px;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #797979;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  border-radius: 20px;
+}
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+}
+input,
+select {
+  text-align: center;
+  width: 400px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+label {
+  padding: 10px;
+}

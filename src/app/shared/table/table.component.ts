@@ -12,8 +12,17 @@ export class TableComponent {
   constructor(private dataService: BillDataService, private router: Router) {}
   @Input() bills;
   @Input() searchedBills;
+
   navigateToBillDetails(billId: number) {
-    this.router.navigate(['/Bill', billId]);
+    const bill = this.bills.find((b) => b.id === billId);
+    console.log('TYPE' + ' ' + bill.type);
+    if (bill.type === 'Electrcity') {
+      this.router.navigate(['/Electricity-Bill', billId]);
+    } else if (bill.type === 'water') {
+      this.router.navigate(['/Electricity-Bill', billId]);
+    } else if (bill.type === 'Telephone') {
+      this.router.navigate(['/Telephone-Bill', billId]);
+    }
   }
   ngOnInit(): void {}
 }

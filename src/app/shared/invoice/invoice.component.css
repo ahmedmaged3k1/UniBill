@@ -9,8 +9,8 @@
   position: absolute;
   width: 600px;
   height: 506px;
-  left: 312px;
-  top: 215px;
+  left: 612px;
+  top: 155px;
   background: #ffffff;
   border: 1px solid #cbcbcb;
   border-radius: 20px;
@@ -131,4 +131,20 @@
   order: 1;
   flex-grow: 0;
   padding-left: 25px;
+}
+.pending-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 75%;
+  left: 38.5%;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #2952bb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  border-radius: 10px;
 }

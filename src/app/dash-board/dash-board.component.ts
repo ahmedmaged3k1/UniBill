@@ -11,8 +11,12 @@ import { Router } from '@angular/router';
 })
 export class DashBoardComponent implements OnInit {
   bills: Bills[];
-  billType: String = ''
-  constructor(private dataService: BillDataService, private route: ActivatedRoute, private router: Router) {
+  billType: String = '';
+  constructor(
+    private dataService: BillDataService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     this.getBills();
   }
   ngOnInit(): void {

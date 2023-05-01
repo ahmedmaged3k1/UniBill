@@ -49,22 +49,23 @@
   </tr>
   <tr class="blue-box">
     <td colspan="4">
-      <table>
-        <tr class="row">
-          <td class="col">
-            <span class="charge">Unit Charge</span>
-          </td>
-          <td><hr class="line" /></td>
-          <td class="col">
-            <span class="amount-title">Amount</span>
-            <span class="money">{{ bill?.amount }}</span>
-          </td>
-          <td class="col">
-            <span class="not-paid-title">If not paid in Due Date</span>
-            <span class="money">{{ bill?.notPaid }}</span>
-          </td>
-        </tr>
-      </table>
+      <tr class="row">
+        <td class="col">
+          <span class="charge">Unit Charge</span>
+        </td>
+        <td><hr class="line" /></td>
+        <td class="col">
+          <span class="amount-title">Amount</span>
+          <span class="money">{{ bill?.amount }}</span>
+        </td>
+        <td class="col">
+          <span class="not-paid-title">If not paid in Due Date</span>
+          <span class="money">{{ bill?.notPaid }}</span>
+        </td>
+      </tr>
     </td>
   </tr>
 </table>
+<button (click)="payPendingBill()" type="submit" class="pending-btn">
+  Pay Pending Bill
+</button>

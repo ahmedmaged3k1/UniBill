@@ -14,6 +14,7 @@ import { TelephoneBillComponent } from './telephone-bill/telephone-bill.componen
 import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { UsersTableComponent } from './Admin/users-table/users-table.component';
+import { AddBillComponent } from './Admin/add-bill/add-bill.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,14 +24,16 @@ const routes: Routes = [
   { path: 'Nav-Bar', component: NavBarComponent },
   { path: 'Dash-Board', component: DashBoardComponent },
   { path: 'Dash-Board/:id', component: DashBoardComponent },
-  { path: 'Bill', component: ElectricityInvoiceComponent },
-  { path: 'Bill/:id', component: ElectricityInvoiceComponent },
+  { path: 'Electricity-Bill', component: ElectricityInvoiceComponent },
+  { path: 'Electricity-Bill/:id', component: ElectricityInvoiceComponent },
   { path: 'Invoice', component: InvoiceComponent },
   { path: 'Invoice/:id', component: InvoiceComponent },
   { path: 'Payment', component: PaymentComponent },
   { path: '404', component: ErrorComponent },
   { path: 'Telephone-Bill', component: TelephoneBillComponent },
+  { path: 'Telephone-Bill/:id', component: TelephoneBillComponent },
   { path: 'Telephone-Card', component: TelephoneCardComponent },
+  { path: 'Add-Bill', component: AddBillComponent },
   { path: 'admin', component: AdminDashboardComponent },
   { path: 'User-Bills', component: UsersTableComponent },
   { path: 'User-Bills/:id', component: UsersTableComponent },
