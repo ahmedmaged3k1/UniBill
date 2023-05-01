@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 60px;
   box-sizing: border-box;
@@ -21,6 +21,7 @@
   text-align: center;
   width: 60%;
   border-radius: 4px;
+  margin-top: 25px;
 }
 th {
   color: #797979;
@@ -34,4 +35,20 @@ table {
 }
 table tr {
   border-bottom: 1px solid #cbcbcb;
+}
+.searchBar {
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
 }

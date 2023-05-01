@@ -26,9 +26,12 @@ export class AdminDashboardComponent implements OnInit {
         phoneNumber:users.fields.phoneNumber.stringValue,
         email :users.fields.email.stringValue ,
       }
+      user.id = users.name.split('/').pop();
+
       return user
 
       })
+
     })
   }
 

@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 60px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.tableContainer {
+  border: 1px solid #cbcbcb;
+  border-radius: 4px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 13px;
+  line-height: 150%;
+  text-align: center;
+  width: 60%;
+  border-radius: 4px;
+  margin-top: 25px;
+}
+th {
+  color: #797979;
+}
+td,
+th {
+  padding: 20px 10px;
+}
+table {
+  border-collapse: collapse;
+}
+table tr {
+  border-bottom: 1px solid #cbcbcb;
+}
+.searchBar {
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
+}

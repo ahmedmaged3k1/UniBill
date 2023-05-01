@@ -1,20 +1,24 @@
 <div class="container">
+  <div class="searchBar">
+    <app-search-bar></app-search-bar>
+  </div>
+  <table class="tableContainer">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
 
-  <app-search-bar></app-search-bar>
-<table class ="tableContainer">
-  <thead>
-    <tr>
-      <th>User Name</th>
-      <th>Email</th>
-      <th>Phone Number</th>
-    </tr>
-  </thead>
 
-  <tr *ngFor = "let user of users">
-    <td>{{user.name}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.phoneNumber}}</td>
+      <tr *ngFor="let user of users">
+        <td><a [routerLink]="['/User-Bills',user.id]">{{user.id}}</a> </td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phoneNumber}}</td>
+      </tr>
 
-  </tr>
-</table>
+  </table>
 </div>
