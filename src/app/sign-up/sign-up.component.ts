@@ -20,44 +20,62 @@ export class SignUpComponent implements OnInit {
     private auth: AuthService,
     private dataService: UserDataService
   ) {}
+  
 
-  ngOnInit() {}
-  //   this.signupForm = new FormGroup({
-  //     fullName: new FormControl('', Validators.required),
-  //     email: new FormControl('', [Validators.required, Validators.email]),
-  //     phone: new FormControl('', Validators.required),
-  //     password: new FormControl('', [
-  //       Validators.required,
-  //       Validators.minLength(5),
-  //     ]),
-  //     billingSystem: new FormControl('', Validators.required),
-  //   });
-  // }
-  // onSubmit() {
-  //   console.log(this.signupForm);
-
-  //   this.signupForm.markAllAsTouched();
-  //   if (this.signupForm.invalid) {
-  //     alert('Please Submit Valid Data');
-  //   }
-
-  //   this.newUser = {
-  //     email: this.signupForm.get('email').value,
-  //     password: this.signupForm.get('password').value,
-  //     name: this.signupForm.get('fullName').value,
-  //     phoneNumber: this.signupForm.get('phone').value,
-  //     paymentType: this.signupForm.get('billingSystem').value,
-  //   };
-  //   console.log(this.newUser);
-  //   this.dataService.addUser(this.newUser);
-  //   this.auth.register(
-  //     this.signupForm.get('email')?.value,
-  //     this.signupForm.get('password')?.value
-  //   );
-  // }
-  // Firebase Functions
-  register() {
-    console.log('clicked');
-    this.auth.register(this.email, this.password);
+  ngOnInit() {
+    this.signupForm = new FormGroup({
+      fullName: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      phone: new FormControl('', Validators.required),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5),
+      ]),
+      billingSystem: new FormControl('', Validators.required),
+    });
   }
+
+  
+   
+  onSubmit() {
+    console.log(this.signupForm);
+
+    this.signupForm.markAllAsTouched();
+    if (this.signupForm.invalid) {
+      alert('Please Submit Valid Data');
+      return
+    }
+
+    const randomId = this.getRandomInt(1, 100000).toString()
+    this.newUser = {
+      id: randomId ,
+      email: this.signupForm.get('email').value,
+      password: this.signupForm.get('password').value,
+      name: this.signupForm.get('fullName').value,
+      phoneNumber: this.signupForm.get('phone').value,
+      paymentType: this.signupForm.get('billingSystem').value,
+    };
+    console.log(this.newUser);
+
+    try {
+      this.auth.register(
+        this.signupForm.get('email')?.value,
+        this.signupForm.get('password')?.value
+      );
+      this.dataService.addUser(this.newUser);
+      
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+
+  // Firebase Functions
+
+  saveUserData(){
+    
+  }
+   getRandomInt(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
 }

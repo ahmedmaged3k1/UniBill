@@ -127,7 +127,7 @@
             <div class="billing-options">
               <input
                 type="radio"
-                name="billing-system"
+                name="billingSystem"
                 value="0"
                 id="post-paid"
                 formControlName="billingSystem"
@@ -137,7 +137,7 @@
             <div class="billing-options">
               <input
                 type="radio"
-                name="billing-system"
+                name="billingSystem"
                 value="1"
                 id="pre-paid"
                 formControlName="billingSystem"
@@ -157,7 +157,7 @@
           </div>
         </div>
 
-        <button type="submit">Signup</button>
+        <button type="submit" (click)="onSubmit()">Signup</button>
 
         <p class="haveAccount">
           Already have an account? <span class="register">Login</span>
