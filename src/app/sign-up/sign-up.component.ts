@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/auth/auth.service';
 import { UserDataService } from '../shared/dataService/user-data.service';
 import { User } from 'src/app/models/user';
-
+import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -18,7 +18,8 @@ export class SignUpComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private dataService: UserDataService
+    private dataService: UserDataService,
+    private router : Router
   ) {}
   
 
@@ -38,25 +39,11 @@ export class SignUpComponent implements OnInit {
   
    
   onSubmit() {
-    console.log(this.signupForm);
-
-    this.signupForm.markAllAsTouched();
-    if (this.signupForm.invalid) {
-      alert('Please Submit Valid Data');
-      return
-    }
-
-    const randomId = this.getRandomInt(1, 100000).toString()
-    this.newUser = {
-      id: randomId ,
-      email: this.signupForm.get('email').value,
-      password: this.signupForm.get('password').value,
-      name: this.signupForm.get('fullName').value,
-      phoneNumber: this.signupForm.get('phone').value,
-      paymentType: this.signupForm.get('billingSystem').value,
-    };
-    console.log(this.newUser);
-
+   if(!this.validateData()) return
+   this.saveUserData()
+   this.register()
+  }
+  register(){
     try {
       this.auth.register(
         this.signupForm.get('email')?.value,
@@ -68,14 +55,29 @@ export class SignUpComponent implements OnInit {
       alert(error.message);
     }
   }
-
-  // Firebase Functions
-
   saveUserData(){
-    
+    const randomId = this.getRandomInt(1, 100000).toString()
+    this.newUser = {
+      id: randomId ,
+      email: this.signupForm.get('email').value,
+      password: this.signupForm.get('password').value,
+      name: this.signupForm.get('fullName').value,
+      phoneNumber: this.signupForm.get('phone').value,
+      paymentType: this.signupForm.get('billingSystem').value,
+    };
   }
    getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  
+  validateData():Boolean{
+    this.signupForm.markAllAsTouched();
+    if (this.signupForm.invalid) {
+      alert('Please Submit Valid Data');
+      return false
+    }
+    return true
+  }
+  navigate(){
+    this.router.navigate(['/login'])
+  }
 }
