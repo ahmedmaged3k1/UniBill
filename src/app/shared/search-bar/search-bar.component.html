@@ -5,3 +5,12 @@
   placeholder="search by type"
 />
 <button class="blue-button" (click)="searchBills()" >Search</button>
+<div class="filter-button">
+  <button class="blue-button">Filter</button>
+  <div class="dropdown">
+    <a  (click)="setFilter('type')">Type</a>
+    <a  (click)="setFilter('date')">Date</a>
+    <a  (click)="setFilter('status')">Status</a>
+  </div>
+</div>
+

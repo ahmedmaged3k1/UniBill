@@ -24,8 +24,10 @@ export class BillDataService {
     return this.http.get<any>(`${this.billsUrl}/${id}`);
   }
   
-  searchByType() {
-    return this.afs.collection(this.path, ref => ref.where('type', '==', this.searchString)).valueChanges();
-  
+  searchBills(option: string) {
+    return this.afs.collection(this.path, ref => ref.where(option, '==', this.searchString)).valueChanges();
+  }
+  searchByStatus() {
+    return this.afs.collection(this.path, ref => ref.where('status', '==', this.searchString)).valueChanges();
   }
 }

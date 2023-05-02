@@ -10,17 +10,23 @@ import { Output } from '@angular/core';
 })
 export class SearchBarComponent {
   constructor(private dataService: BillDataService) { }
+  filterBy: string = '';
   searchedString : string
   bills : Bills
 
   @Output() billList = new EventEmitter<Bills[]>();
   ngOnInit(): void {
   }
-
   searchBills(){
     this.dataService.searchString=this.searchedString
-    this.dataService.searchByType().subscribe((b: Bills[]) => {
+    if(this.filterBy===null)this.filterBy="type"
+    this.dataService.searchBills(this.filterBy).subscribe((b: Bills[]) => {
       this.billList.emit(b)
     });
+  }
+
+  setFilter(option: string) {
+    this.filterBy = option;
+    alert("Search is set to be by "+option)
   }
 }
