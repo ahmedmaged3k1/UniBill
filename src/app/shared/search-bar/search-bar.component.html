@@ -2,6 +2,6 @@
   class="searchBar"
   [(ngModel)]="searchedString"
   type="text"
-  placeholder="search"
+  placeholder="search by type"
 />
-<button class="blue-button">Search</button>
+<button class="blue-button" (click)="searchBills()" >Search</button>
