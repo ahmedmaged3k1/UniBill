@@ -32,6 +32,7 @@ th {
 }
 table {
   border-collapse: collapse;
+  margin-bottom: 16px;
 }
 table tr {
   border-bottom: 1px solid #cbcbcb;
@@ -51,4 +52,8 @@ a {
 a:hover {
   color: red;
   text-decoration: underline;
+}
+.blue-button
+{
+  width:200px ;
 }

@@ -26,6 +26,8 @@ export class InvoiceComponent implements OnInit {
 
   loadBillById() {
     this.billDataService.getBillById(this.id).subscribe((res) => {
+      console.log(res);
+
       this.bill = {
         amount: res.fields.amount.stringValue,
         notPaid: res.fields.amount.stringValue,
@@ -40,6 +42,8 @@ export class InvoiceComponent implements OnInit {
   }
   payPendingBill() {
     // Navigate to another component
-    this.router.navigate(['/Payment']);
+    // console.log('id ' + this.id);
+
+    this.router.navigate(['/Payment', this.id]);
   }
 }
