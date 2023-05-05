@@ -16,11 +16,13 @@ export class TableComponent {
   navigateToBillDetails(billId: number) {
     const bill = this.bills.find((b) => b.id === billId);
     console.log('TYPE' + ' ' + bill.type);
-    if (bill.type === 'Electrcity') {
+    if (bill.type === 'electricity') {
+
+
       this.router.navigate(['/Electricity-Bill', billId]);
     } else if (bill.type === 'water') {
       this.router.navigate(['/Electricity-Bill', billId]);
-    } else if (bill.type === 'Telephone') {
+    } else if (bill.type === 'telephone') {
       this.router.navigate(['/Telephone-Bill', billId]);
     }
   }

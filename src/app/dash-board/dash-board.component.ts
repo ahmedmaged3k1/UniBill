@@ -24,18 +24,20 @@ export class DashBoardComponent implements OnInit {
     private router: Router,
     private auth: AuthService
   ) {
+    this.checkRoute();
+
     this.checkLoggedIn().then(e=>{
     this.getBills();
     }
     );
   }
   ngOnInit(): void {
-    this.checkRoute();
 
   }
   getBills() {
     this.dataService.getBills(this.id).subscribe(bills => {
-      console.log(bills);
+      if(!bills.documents)
+      return
 
       this.bills = bills.documents?.map(b=>{
         return{
@@ -48,16 +50,30 @@ export class DashBoardComponent implements OnInit {
         }
 
       });
+      if(this.billType.toLowerCase()==="water"){
+        this.getWaterBills();
+      }
+      else if(this.billType.toLowerCase()==="electricity"){
+
+
+        this.getElectricityBills();
+      }
+      else if(this.billType.toLowerCase()==="telephone"){
+        this.getTelephoneBills();
+      }
     })
 
   }
 
   getElectricityBills() {
-    let ElectricityBills = this.bills.filter(
-      (b) => b.type.toLowerCase() === 'electrcity'
-    );
-    this.bills = ElectricityBills;
     console.log(this.bills);
+
+    let ElectricityBills = this.bills?.filter(
+      (b) => b.type.toLowerCase() === 'electricity'
+    );
+    console.log(ElectricityBills);
+
+    this.bills = ElectricityBills;
   }
   getWaterBills() {
     let waterBills = this.bills.filter((b) => b.type.toLowerCase() === 'water');
@@ -80,7 +96,7 @@ export class DashBoardComponent implements OnInit {
   checkRoute() {
     this.route.params.subscribe((p) => {
       this.billType = p['id'] || '';
-      console.log(this.billType);
+
       this.getBills();
     });
   }
@@ -88,7 +104,7 @@ export class DashBoardComponent implements OnInit {
   checkLoggedIn() {
     return new Promise(res=>{
       this.auth.getCurrentUser().subscribe(user => {
-        console.log(user.uid);
+
 
         if (user) {
           this.isLoggedin = true;

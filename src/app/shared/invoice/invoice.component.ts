@@ -26,6 +26,8 @@ export class InvoiceComponent implements OnInit {
 
   loadBillById() {
     this.billDataService.getBillById(this.id).subscribe((res) => {
+      console.log(res);
+
       this.bill = {
         amount: res.fields.amount.stringValue,
         notPaid: res.fields.amount.stringValue,
