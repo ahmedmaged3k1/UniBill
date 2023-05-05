@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { BillDataService } from '../dataService/bill-data.service';
+import { Bills } from 'src/app/models/Bills';
 
 @Component({
   selector: 'app-payment',
@@ -7,6 +9,19 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./payment.component.css'],
 })
 export class PaymentComponent {
+  constructor(private dataService: BillDataService) {}
+  id;
+  bills: Bills[];
+  changeStatus() {
+    this.dataService.getBills(this.id).subscribe((bills) => {
+      this.bills = bills.documents?.map((b) => {
+        const updatedBill = { ...b.fields };
+        this.dataService.updateBill(updatedBill);
+        return updatedBill;
+      });
+    });
+  }
+
   paymentForm = new FormGroup({
     creditNumber: new FormControl('', [
       Validators.required,
@@ -23,6 +38,7 @@ export class PaymentComponent {
       alert('Please Submit Valid Data');
       return false;
     }
+    this.changeStatus();
     return true;
   }
 }
