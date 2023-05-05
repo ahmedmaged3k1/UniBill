@@ -18,7 +18,8 @@ export class AdminDashboardComponent implements OnInit {
 
   loadUser (){
     this.userService.getUsers().subscribe(res=>{
-  
+      console.log(res);
+
 
       this.users = res.documents.map(users=>{
       let user;
