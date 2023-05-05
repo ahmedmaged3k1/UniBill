@@ -19,9 +19,9 @@ export class SignUpComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private dataService: UserDataService,
-    private router : Router
-  ) {}
-  
+    private router: Router
+  ) { }
+
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -36,29 +36,33 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  
-   
+
+
   onSubmit() {
-   if(!this.validateData()) return
-   this.saveUserData()
-   this.register()
+    if (!this.validateData()) return
+    this.saveUserData()
+    this.register()
   }
-  register(){
+  register() {
     try {
       this.auth.register(
         this.signupForm.get('email')?.value,
-        this.signupForm.get('password')?.value
+        this.signupForm.get('password')?.value,
+        this.signupForm.get('phone')?.value,
+        this.signupForm.get('fullName')?.value,
+        this.signupForm.get('billingSystem')?.value,
+
       );
-      this.dataService.addUser(this.newUser);
-      
+    
+
     } catch (error) {
       alert(error.message);
     }
   }
-  saveUserData(){
+  saveUserData() {
     const randomId = this.getRandomInt(1, 100000).toString()
     this.newUser = {
-      id: randomId ,
+      id: randomId,
       email: this.signupForm.get('email').value,
       password: this.signupForm.get('password').value,
       name: this.signupForm.get('fullName').value,
@@ -66,10 +70,10 @@ export class SignUpComponent implements OnInit {
       paymentType: this.signupForm.get('billingSystem').value,
     };
   }
-   getRandomInt(min: number, max: number): number {
+  getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  validateData():Boolean{
+  validateData(): Boolean {
     this.signupForm.markAllAsTouched();
     if (this.signupForm.invalid) {
       alert('Please Submit Valid Data');
@@ -77,7 +81,7 @@ export class SignUpComponent implements OnInit {
     }
     return true
   }
-  navigate(){
+  navigate() {
     this.router.navigate(['/login'])
   }
 }

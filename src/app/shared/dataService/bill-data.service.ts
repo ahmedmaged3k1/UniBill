@@ -11,19 +11,19 @@ import { HttpClient } from '@angular/common/http';
 export class BillDataService {
   searchString: string;
   billsUrl =
-    'https://firestore.googleapis.com/v1/projects/unibell-5f28c/databases/(default)/documents/Bills';
+    'https://firestore.googleapis.com/v1/projects/unibell-5f28c/databases/(default)/documents/Users';
     path = '/Bills'
     billsRef: AngularFirestoreCollection<Bills>
   constructor(private http: HttpClient, private afs: AngularFirestore) {
     this.billsRef = afs.collection(this.path);
   }
-  getBills() {
-    return this.http.get<any>(this.billsUrl);
+  getBills(id:string) {
+    return this.http.get<any>(`${this.billsUrl}/${id}/Bills`);
   }
   getBillById(id: string) {
     return this.http.get<any>(`${this.billsUrl}/${id}`);
   }
-  
+
   searchBills(option: string) {
     return this.afs.collection(this.path, ref => ref.where(option, '==', this.searchString)).valueChanges();
   }

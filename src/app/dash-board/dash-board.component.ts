@@ -1,9 +1,12 @@
+
 import { Component, OnInit } from '@angular/core';
 import { BillDataService } from '../shared/dataService/bill-data.service';
 import { Bills } from '../models/Bills';
 
 import { ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth/auth.service';
+import { UserDataService } from '../shared/dataService/user-data.service';
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',
@@ -12,52 +15,41 @@ import { Router } from '@angular/router';
 export class DashBoardComponent implements OnInit {
   bills: Bills[];
   billType: String = '';
+  isLoggedin: boolean;
+  id;
   constructor(
     private dataService: BillDataService,
+    private userService: UserDataService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) {
+    this.checkLoggedIn().then(e=>{
     this.getBills();
+    }
+    );
   }
   ngOnInit(): void {
-    this.route.params.subscribe((p) => {
-      this.billType = p['id'] || '';
-      console.log(this.billType);
-      this.getBills();
-    });
-    // this.router.events.subscribe((event) => {
+    this.checkRoute();
 
-    //   if (event instanceof NavigationEnd) {
-
-    //   }
-    // });
   }
   getBills() {
-    this.dataService.getBills().subscribe((res) => {
-      this.bills = res.documents.map((b) => {
-        let bill;
-        bill = {
-          date: b.fields.date.stringValue,
-          amount: b.fields.amount.stringValue,
-          dueDate: b.fields.dueDate.stringValue,
-          status: b.fields.status.stringValue,
-          type: b.fields.type.stringValue,
-        };
-        bill.id = b.name.split('/').pop();
+    this.dataService.getBills(this.id).subscribe(bills => {
+      console.log(bills);
 
-        return bill;
+      this.bills = bills.documents?.map(b=>{
+        return{
+          id :b.name.split('/').pop(),
+          amount : b.fields.amount.stringValue,
+          date : b.fields.date.stringValue,
+          dueDate : b.fields.dueDate.stringValue,
+          type : b.fields.type.stringValue,
+          status : b.fields.status.stringValue,
+        }
+
       });
-      if (this.billType.toLowerCase() === 'water') {
-        console.log('aloo function water');
+    })
 
-        this.getWaterBills();
-      } else if (this.billType.toLowerCase() === 'electricty') {
-        console.log('aloo function electricity');
-        this.getElectricityBills();
-      } else if (this.billType.toLowerCase() === 'telephone') {
-        this.getTelephoneBills();
-      }
-    });
   }
 
   getElectricityBills() {
@@ -83,5 +75,31 @@ export class DashBoardComponent implements OnInit {
 
   recieveBill($event: Bills[]) {
     this.bills = $event;
+  }
+
+  checkRoute() {
+    this.route.params.subscribe((p) => {
+      this.billType = p['id'] || '';
+      console.log(this.billType);
+      this.getBills();
+    });
+  }
+
+  checkLoggedIn() {
+    return new Promise(res=>{
+      this.auth.getCurrentUser().subscribe(user => {
+        console.log(user.uid);
+
+        if (user) {
+          this.isLoggedin = true;
+          this.id = user.uid;
+          res(user.uid)
+        }
+        else {
+          this.isLoggedin = false;
+          res('')
+        }
+      })
+    })
   }
 }
