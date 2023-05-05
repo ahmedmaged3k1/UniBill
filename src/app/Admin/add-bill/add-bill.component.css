@@ -1,7 +1,7 @@
 .frame {
   position: absolute;
-  left: 30%;
-  top: 10%;
+  left: 40%;
+  top: 5%;
   font-style: normal;
   font-family: "Poppins";
   border: 1px solid #cbcbcb;
@@ -24,8 +24,10 @@
 .text {
   display: flex;
   color: #000000;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
+  flex-direction: column;
 }
 
 .text input[type="text"],
@@ -59,4 +61,16 @@ select {
 
 label {
   padding: 10px;
+}
+.errorStyle {
+  border: 1px solid red !important;
+}
+
+div.errorMessage {
+  color: red;
+  font-size: 15px;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  text-align: center;
+  margin-inline: auto;
 }

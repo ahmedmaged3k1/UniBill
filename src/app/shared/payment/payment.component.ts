@@ -18,5 +18,11 @@ export class PaymentComponent {
   });
   onSubmit() {
     console.log(this.paymentForm);
+    this.paymentForm.markAllAsTouched();
+    if (this.paymentForm.invalid) {
+      alert('Please Submit Valid Data');
+      return false;
+    }
+    return true;
   }
 }

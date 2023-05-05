@@ -1,34 +1,111 @@
 <app-nav-bar> </app-nav-bar>
-<div class="frame">
-  <div class="main">
-    <h1>Add bill details:</h1>
+<form [formGroup]="form">
+  <div class="frame">
+    <div class="main">
+      <h1>Add bill details:</h1>
+    </div>
+
+    <div class="inputs-container">
+      <div class="text">
+        <label for="billType">Bill Type</label>
+        <select
+          id="billType"
+          formControlName="billType"
+          [ngClass]="{
+            errorStyle:
+              form.get('billType').invalid &&
+              (form.get('billType').dirty || form.get('billType').touched)
+          }"
+        >
+          <option value="" selected>-- Select a bill type --</option>
+          <option value="Electricity">Electricity</option>
+          <option value="Telephone">Telephone</option>
+          <option value="Water">Water</option>
+        </select>
+        <div
+          *ngIf="
+            form.get('billType').invalid &&
+            (form.get('billType').dirty || form.get('billType').touched)
+          "
+          class="errorMessage"
+        >
+          Please select a bill type
+        </div>
+      </div>
+
+      <div class="text">
+        <label for="amount">Amount</label>
+        <input
+          type="number"
+          formControlName="amount"
+          [ngClass]="{
+            errorStyle:
+              form.get('amount').invalid &&
+              (form.get('amount').dirty || form.get('amount').touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('amount').invalid &&
+            (form.get('amount').dirty || form.get('amount').touched)
+          "
+          class="errorMessage"
+        >
+          Please type a vaild amount
+        </div>
+      </div>
+
+      <div class="text">
+        <label for="date">Date</label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          formControlName="date"
+          [ngClass]="{
+            errorStyle:
+              form.get('date').invalid &&
+              (form.get('date').dirty || form.get('date').touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('date').invalid &&
+            (form.get('date').dirty || form.get('date').touched)
+          "
+          class="errorMessage"
+        >
+          Please enter a valid date
+        </div>
+      </div>
+
+      <div class="text">
+        <label for="dueDate">Due Date</label>
+        <input
+          type="date"
+          id="dueDate"
+          name="dueDate"
+          formControlName="dueDate"
+          [ngClass]="{
+            errorStyle:
+              form.get('dueDate').invalid &&
+              (form.get('dueDate').dirty || form.get('dueDate').touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('dueDate').invalid &&
+            (form.get('dueDate').dirty || form.get('dueDate').touched)
+          "
+          class="errorMessage"
+        >
+          Please enter a valid due date
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="bill-btn" (click)="onSubmit()">
+      Add New Bill
+    </button>
   </div>
-
-  <div class="inputs-container">
-    <div class="text">
-      <label for="billType">Bill Type</label>
-      <select id="billType">
-        <option value="option1" selected>Electricity</option>
-        <option value="option2">Telephone</option>
-        <option value="option3">Water</option>
-      </select>
-    </div>
-
-    <div class="text">
-      <label for="amount">Amount</label>
-      <input type="text" id="amount" name="amount" />
-    </div>
-
-    <div class="text">
-      <label for="date">Date</label>
-      <input type="date" id="date" name="date" />
-    </div>
-
-    <div class="text">
-      <label for="dueDate">Due Date</label>
-      <input type="date" id="dueDate" name="dueDate" />
-    </div>
-  </div>
-
-  <button type="submit" class="bill-btn">Add new bill</button>
-</div>
+</form>
