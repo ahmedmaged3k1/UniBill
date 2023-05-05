@@ -37,6 +37,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent },
   { path: 'User-Bills', component: UsersTableComponent },
   { path: 'User-Bills/:id', component: UsersTableComponent },
+  
+
 ];
 
 @NgModule({
