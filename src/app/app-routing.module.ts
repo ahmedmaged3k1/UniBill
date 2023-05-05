@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'Invoice', component: InvoiceComponent },
   { path: 'Invoice/:id', component: InvoiceComponent },
   { path: 'Payment', component: PaymentComponent },
+  { path: 'Payment/:id', component: PaymentComponent },
   { path: '404', component: ErrorComponent },
   { path: 'Telephone-Bill', component: TelephoneBillComponent },
   { path: 'Telephone-Bill/:id', component: TelephoneBillComponent },
@@ -37,8 +38,6 @@ const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent },
   { path: 'User-Bills', component: UsersTableComponent },
   { path: 'User-Bills/:id', component: UsersTableComponent },
-  
-
 ];
 
 @NgModule({

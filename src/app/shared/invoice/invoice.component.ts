@@ -42,6 +42,8 @@ export class InvoiceComponent implements OnInit {
   }
   payPendingBill() {
     // Navigate to another component
-    this.router.navigate(['/Payment']);
+    // console.log('id ' + this.id);
+
+    this.router.navigate(['/Payment', this.id]);
   }
 }
