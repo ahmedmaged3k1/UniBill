@@ -35,6 +35,10 @@ export class DashBoardComponent implements OnInit {
   }
   ngOnInit(): void {
 
+    
+  }
+  logout(){
+    this.auth.logout()
   }
   getBills() {
     this.dataService.getBills(this.id).subscribe(bills => {

@@ -33,7 +33,7 @@
         <label for="card-name">Card Name</label>
         <input
           id="card-name"
-          placeholder="Mohab Ahmed"
+          placeholder="Card Name "
           type="text"
           formControlName="cardName"
           [ngClass]="{
@@ -107,7 +107,16 @@
         </div>
       </div>
 
-      <button type="submit" class="checkout-btn">Checkout</button>
+      <button
+        type="submit"
+        class="checkout-btn"
+        (click)="paymentForm.valid && (showPopup = true)"
+        [disabled]="!paymentForm.valid"
+      >
+        Checkout
+      </button>
+
+      <app-pop-up [showPopup]="showPopup"></app-pop-up>
     </form>
   </div>
 </div>

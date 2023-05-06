@@ -1,7 +1,4 @@
 <div class="container">
-  <div class="searchBar">
-    <app-search-bar></app-search-bar>
-  </div>
   <table class="tableContainer">
     <thead>
       <tr>
@@ -11,23 +8,25 @@
         <th>Due Date</th>
         <th>Status</th>
         <th>Type</th>
-
-
+        <th>Action</th>
       </tr>
     </thead>
-
-
+    <tbody>
       <tr *ngFor="let bill of bills">
-        <td>{{bill.id}} </td>
+        <td>{{bill.id}}</td>
         <td>{{bill.date}}</td>
         <td>{{bill.amount}}</td>
         <td>{{bill.dueDate}}</td>
         <td>{{bill.status}}</td>
         <td>{{bill.type}}</td>
+        <td>
+          <button [disabled]="bill.status === 'paid'" (click)="payBill(bill)" class="blue-button" *ngIf="bill.status !== 'paid'">Pay Bill</button>
+          <span *ngIf="bill.status === 'paid'">Paid</span>
+        </td>
       </tr>
-
+    </tbody>
   </table>
-  <div >
+  <div>
     <button (click)="navigate()" class="blue-button">Add Bill</button>
   </div>
 </div>

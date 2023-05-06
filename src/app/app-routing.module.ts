@@ -16,6 +16,8 @@ import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard
 import { UsersTableComponent } from './Admin/users-table/users-table.component';
 import { AddBillComponent } from './Admin/add-bill/add-bill.component';
 import { AdminConfigurationComponent } from './Admin/admin-configuration/admin-configuration.component';
+import { HistoryComponent } from './history/history.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -41,6 +43,7 @@ const routes: Routes = [
   { path: 'User-Bills/:id', component: UsersTableComponent },
   { path: 'Admin-Configuration', component: AdminConfigurationComponent },
 
+  { path: 'Bills-History', component: HistoryComponent },
 ];
 
 @NgModule({

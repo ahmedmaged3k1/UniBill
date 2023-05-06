@@ -68,4 +68,28 @@ export class BillDataService {
       )
       .valueChanges();
   }
+ /* addBill(bill: Bills): Promise<void> {
+    const id = this.afs.createId();
+    const newBill: Bills = { ...bill, id };
+    return this.billsRef.doc(id).set(newBill);
+  }*/
+  addBill(bill: Bills): Observable<void> {
+    const id = this.afs.createId();
+    const url = `${this.billsUrl}/${this.userId}/Bills/${id}`;
+    const data = {
+      fields: {
+        id: { stringValue: id },
+ 
+        amount: { stringValue: bill.amount },
+         dueDate: { integerValue: bill.dueDate },
+         date: { integerValue: bill.date },
+         type: { integerValue: bill.type },
+
+         status: { stringValue: bill.status }
+      },
+    };
+  
+    return this.http.put<void>(url, data);
+  }
+  
 }

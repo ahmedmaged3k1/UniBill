@@ -26,6 +26,9 @@ import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard
 import { UsersTableComponent } from './Admin/users-table/users-table.component';
 import { AddBillComponent } from './Admin/add-bill/add-bill.component';
 import { AdminConfigurationComponent } from './Admin/admin-configuration/admin-configuration.component';
+import { HistoryComponent } from './history/history.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +50,8 @@ import { AdminConfigurationComponent } from './Admin/admin-configuration/admin-c
     UsersTableComponent,
     AddBillComponent,
     AdminConfigurationComponent,
+    HistoryComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,

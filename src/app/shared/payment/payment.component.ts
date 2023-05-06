@@ -4,7 +4,6 @@ import { BillDataService } from '../dataService/bill-data.service';
 import { Bills } from 'src/app/models/Bills';
 import { AuthService } from '../auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
-
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -42,7 +41,7 @@ export class PaymentComponent implements OnInit {
           type: b.fields.type.stringValue,
           status: b.fields.status.stringValue,
         };
-        // console.log('updated bill' + updatedBill);
+       
         this.dataService.updateBill(updatedBill).subscribe((res) => {
           // console.log('RESULT' + res);
         });
@@ -70,4 +69,5 @@ export class PaymentComponent implements OnInit {
     this.changeStatus();
     return true;
   }
+  showPopup = false;
 }

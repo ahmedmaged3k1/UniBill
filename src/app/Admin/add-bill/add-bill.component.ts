@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BillDataService } from 'src/app/shared/dataService/bill-data.service';
+import { Bills } from 'src/app/models/Bills';
+import { BillDataService } from 'src/app/shared/dataService/bill-data.service';
 
 @Component({
   selector: 'app-add-bill',
