@@ -16,12 +16,12 @@ export class BillDataService {
   billsUrl =
     'https://firestore.googleapis.com/v1/projects/unibell-5f28c/databases/(default)/documents/Users';
   path = '/Bills';
-  electricityAmountPrice:string='2';
-  electricityOverdue:string='200';
-  waterAmountPrice:string='5';
-  waterOverdue:string='100';
-  telephoneAmountPrice:string='7';
-  telephoneOverdue:string='300';
+  electricityAmountPrice: string = '2';
+  electricityOverdue: string = '200';
+  waterAmountPrice: string = '5';
+  waterOverdue: string = '100';
+  telephoneAmountPrice: string = '7';
+  telephoneOverdue: string = '300';
   billsRef: AngularFirestoreCollection<Bills>;
   constructor(
     private http: HttpClient,
@@ -51,8 +51,8 @@ export class BillDataService {
   getBillById(id: string) {
     return this.http.get<any>(`${this.billsUrl}/${this.userId}/Bills/${id}`);
   }
-  addBill(bill){
-    return this.http.post<any>(`${this.billsUrl}/${this.userId}/Bills`,bill)
+  addBill(bill) {
+    return this.http.post<any>(`${this.billsUrl}/${this.userId}/Bills`, bill)
   }
   searchBills(option: string) {
     return this.afs
@@ -68,28 +68,7 @@ export class BillDataService {
       )
       .valueChanges();
   }
- /* addBill(bill: Bills): Promise<void> {
-    const id = this.afs.createId();
-    const newBill: Bills = { ...bill, id };
-    return this.billsRef.doc(id).set(newBill);
-  }*/
-  addBill(bill: Bills): Observable<void> {
-    const id = this.afs.createId();
-    const url = `${this.billsUrl}/${this.userId}/Bills/${id}`;
-    const data = {
-      fields: {
-        id: { stringValue: id },
- 
-        amount: { stringValue: bill.amount },
-         dueDate: { integerValue: bill.dueDate },
-         date: { integerValue: bill.date },
-         type: { integerValue: bill.type },
 
-         status: { stringValue: bill.status }
-      },
-    };
-  
-    return this.http.put<void>(url, data);
-  }
-  
+
+
 }
