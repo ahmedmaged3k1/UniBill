@@ -27,6 +27,7 @@ import { UsersTableComponent } from './Admin/users-table/users-table.component';
 import { AddBillComponent } from './Admin/add-bill/add-bill.component';
 import { HistoryComponent } from './history/history.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,

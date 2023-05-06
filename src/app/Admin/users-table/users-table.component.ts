@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Bills } from 'src/app/models/Bills';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BillDataService } from 'src/app/shared/dataService/bill-data.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-users-table',
@@ -12,7 +13,7 @@ import { BillDataService } from 'src/app/shared/dataService/bill-data.service';
 export class UsersTableComponent implements OnInit {
   bills: Bills[];
   userId: string;
-  constructor(private userData: UserDataService, private route: ActivatedRoute, private billdata: BillDataService,private router :Router) { }
+  constructor(private userData: UserDataService, private route: ActivatedRoute, private billdata: BillDataService,private router :Router , private location: Location) { }
   ngOnInit(): void {
     this.route.params.subscribe(res => {
       this.userId = res['id'];
@@ -57,6 +58,8 @@ export class UsersTableComponent implements OnInit {
         // console.log('updated bill' + updatedBill);
         this.billdata.updateBill(updatedBill).subscribe((res) => {
           // console.log('RESULT' + res);
+        alert("Bill paid")
+       // this.location.reload();
         });
         return updatedBill;
       }
