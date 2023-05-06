@@ -1,7 +1,4 @@
 <div class="container">
-  <div class="searchBar">
-    <app-search-bar></app-search-bar>
-  </div>
   <table class="tableContainer">
     <thead>
       <tr>
@@ -22,8 +19,9 @@
         <td>{{bill.dueDate}}</td>
         <td>{{bill.status}}</td>
         <td>{{bill.type}}</td>
-        <td> 
-          <button (click)="payBill(bill)" class="blue-button">Pay Bill</button>
+        <td>
+          <button [disabled]="bill.status === 'paid'" (click)="payBill(bill)" class="blue-button" *ngIf="bill.status !== 'paid'">Pay Bill</button>
+          <span *ngIf="bill.status === 'paid'">Paid</span>
         </td>
       </tr>
     </tbody>
