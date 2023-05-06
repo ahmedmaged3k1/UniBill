@@ -10,12 +10,13 @@ import { BillDataService } from '../dataService/bill-data.service';
 export class InvoiceComponent implements OnInit {
   bill: any;
   id: string;
+  isTele: boolean;
 
   constructor(
     private route: ActivatedRoute,
     private billDataService: BillDataService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
@@ -34,9 +35,13 @@ export class InvoiceComponent implements OnInit {
         dueDate: res.fields.dueDate.stringValue,
         type: res.fields.type.stringValue,
       };
-      this.bill.notPaid = parseFloat(this.bill.amount) + 200;
-      console.log('this is the type' + ' ' + res.fields.type.stringValue);
+      if(this.bill.type.toLowerCase()==="telephone"){
+        this.isTele = true;
+        console.log(this.isTele);
 
+      }
+
+      console.log('this is the type' + ' ' + res.fields.type.stringValue);
       return this.bill;
     });
   }
@@ -45,5 +50,8 @@ export class InvoiceComponent implements OnInit {
     // console.log('id ' + this.id);
 
     this.router.navigate(['/Payment', this.id]);
+  }
+  viewPlans(){
+    this.router.navigate(['/Telephone-Card']);
   }
 }

@@ -22,8 +22,8 @@ export class TableComponent {
       this.router.navigate(['/Electricity-Bill', billId]);
     } else if (bill.type === 'water') {
       this.router.navigate(['/Electricity-Bill', billId]);
-    } else if (bill.type === 'telephone') {
-      this.router.navigate(['/Telephone-Bill', billId]);
+    } else if (bill.type === 'Telephone') {
+      this.router.navigate(['/Electricity-Bill', billId]);
     }
   }
   ngOnInit(): void {}

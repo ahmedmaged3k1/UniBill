@@ -1,23 +1,65 @@
 <div class="container">
-  <img src="../../../assets/Icon.svg" alt="">
-  <div class="offer">
-
-  <h1>Telecom Egypt</h1>
-  <p>Telecom Egypt offers you a variety of rate plans to fulfill your needs.</p>
-  <div class="offerContainer">
-    <ol>
-      <div class="offerHeader">
-        <li>
-          WE Space - Super
-        </li>
+  <div class="innerContainer">
+    <img class="telephoneImg" src="../../../assets/WE.png" alt="">
+    <div class="offer">
+      <h1>Telecom Egypt</h1>
+      <p>Telecom Egypt offers you a variety of rate plans to fulfill your needs.</p>
+      <div *ngFor = "let offers of weOffers" class="offerContainer">
+        <ol>
+          <div class="offerHeader we">
+            <li>
+              {{offers.offerHeader}}
+            </li>
+          </div>
+          <div *ngFor="let details of offers.offerDetail" class="offerList">
+            <ul >
+              <li>{{details}}</li>
+            </ul>
+          </div>
+        </ol>
       </div>
-      <div class="offerList">
-        <ul>
-          <li>140GB - 120EGP /month</li>
-          <li>200 GB - 170 EGP/month</li>
-          <li>250 GB - 210 EGP/month</li>
-        </ul>
-      </div>
-
-    </ol>
+    </div>
   </div>
+  <div class="innerContainer">
+    <img class="telephoneImg" src="../../../assets/vodaphone.png  " alt="">
+    <div class="offer">
+      <h1>Vodaphone</h1>
+      <p>Vodafone offers you a variety of rate plans to fulfill your needs.</p>
+      <div *ngFor = "let offers of vodaOffers" class="offerContainer">
+        <ol>
+          <div class="offerHeader voda">
+            <li>
+              {{offers.offerHeader}}
+            </li>
+          </div>
+          <div *ngFor="let details of offers.offerDetail" class="offerList">
+            <ul >
+              <li>{{details}}</li>
+            </ul>
+          </div>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="innerContainer">
+    <img class="telephoneImg" src="../../../assets/etislat.png " alt="">
+    <div class="offer">
+      <h1>Vodaphone</h1>
+      <p>Vodafone offers you a variety of rate plans to fulfill your needs.</p>
+      <div *ngFor = "let offers of etisalatOffers" class="offerContainer">
+        <ol>
+          <div class="offerHeader eti">
+            <li>
+              {{offers.offerHeader}}
+            </li>
+          </div>
+          <div *ngFor="let details of offers.offerDetail" class="offerList">
+            <ul >
+              <li>{{details}}</li>
+            </ul>
+          </div>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

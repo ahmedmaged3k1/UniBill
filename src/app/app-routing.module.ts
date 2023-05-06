@@ -15,6 +15,7 @@ import { TelephoneCardComponent } from './shared/telephone-card/telephone-card.c
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { UsersTableComponent } from './Admin/users-table/users-table.component';
 import { AddBillComponent } from './Admin/add-bill/add-bill.component';
+import { AdminConfigurationComponent } from './Admin/admin-configuration/admin-configuration.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -38,6 +39,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent },
   { path: 'User-Bills', component: UsersTableComponent },
   { path: 'User-Bills/:id', component: UsersTableComponent },
+  { path: 'Admin-Configuration', component: AdminConfigurationComponent },
+
 ];
 
 @NgModule({

@@ -15,13 +15,13 @@ export class CardComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    
+
     if (this.bill.type.toLowerCase() === "water") {
 
       this.imgSrc = "../../../assets/BlueWater.svg";
     }
 
-    else if (this.bill.type.toLowerCase() === "electrcity") {
+    else if (this.bill.type.toLowerCase() === "electricity") {
       this.imgSrc = "../../../assets/Electrcity.svg";
 
 

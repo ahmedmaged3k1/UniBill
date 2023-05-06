@@ -16,6 +16,12 @@ export class BillDataService {
   billsUrl =
     'https://firestore.googleapis.com/v1/projects/unibell-5f28c/databases/(default)/documents/Users';
   path = '/Bills';
+  electricityAmountPrice:string='2';
+  electricityOverdue:string='200';
+  waterAmountPrice:string='5';
+  waterOverdue:string='100';
+  telephoneAmountPrice:string='7';
+  telephoneOverdue:string='300';
   billsRef: AngularFirestoreCollection<Bills>;
   constructor(
     private http: HttpClient,
@@ -25,8 +31,8 @@ export class BillDataService {
     this.billsRef = afs.collection(this.path);
     this.auth.getCurrentUser().subscribe((user) => {
       this.userId = user.uid;
-      console.log(this.userId);
     });
+
   }
   updateBill(bill: Bills): Observable<void> {
     const url = `${this.billsUrl}/${this.userId}/Bills/${bill.id}?updateMask.fieldPaths=status`;
@@ -45,7 +51,9 @@ export class BillDataService {
   getBillById(id: string) {
     return this.http.get<any>(`${this.billsUrl}/${this.userId}/Bills/${id}`);
   }
-
+  addBill(bill){
+    return this.http.post<any>(`${this.billsUrl}/${this.userId}/Bills`,bill)
+  }
   searchBills(option: string) {
     return this.afs
       .collection(this.path, (ref) =>

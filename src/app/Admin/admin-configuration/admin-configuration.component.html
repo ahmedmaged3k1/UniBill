@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="inner">
+    <label for="">Electricity</label>
+    <input [(ngModel)]="electricityAmount" type="text" placeholder="Amount (ex : watt,liter,units)">
+    <input [(ngModel)]="electricityOverdue" type="text" placeholder="Overdue (per Month)">
+
+    <label for="">Water</label>
+    <input  [(ngModel)]="waterAmount" type="text" placeholder="Amount (ex : watt,liter,units)">
+    <input   [(ngModel)]="waterOverdue" type="text" placeholder="Overdue (per Month)">
+
+
+    <label for="">Telephone</label>
+    <input  [(ngModel)]="telephoneAmount" type="text" placeholder="Amount (ex : watt,liter,units)">
+    <input  [(ngModel)]="telephoneOverdue" type="text" placeholder="Overdue (per Month)">
+
+    <button (click)="onSave()">Save Configuration</button>
+  </div>
+
+</div>

@@ -2,58 +2,92 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 24px;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   width: fit-content;
-  border: 1px solid #CBCBCB;
   border-radius: 10px;
   padding: 32px 24px 32px 24px;
-  width: 306px;
-  height: 454px;
-
-
-
+  height: 100vh;
+  width: 100%;
 }
-.offerHeader  {
-  color: #5b2c91;
+
+.innerContainer {
+  display: flex;
+  border: 1px solid #cbcbcb;
+  flex-direction: column;
+  width: 306px;
+  padding: 20px;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px;
+}
+.offerHeader {
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  background: rgba(91, 44, 145, 0.1);
-  padding:16px 8px 16px 8px;
+  padding: 16px 8px 16px 8px;
   gap: 24px;
   border-radius: 10px;
   margin-bottom: 15px;
   width: 100%;
+  text-align: start;
 }
-ol, ul {
+.we{
+  color: #5b2c91;
+  background: rgba(91, 44, 145, 0.1);
+
+}
+.voda{
+  color: #E60000;
+  background: rgba(145, 44, 44, 0.1);;
+}
+.eti {
+  color: #101010;
+  background: #E9E9E9;
+}
+ol,
+ul {
   list-style-position: inside;
   text-align: center;
   padding: 0px 0px;
 }
-.offerContainer{
+.offerContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+
   width: 100%;
   text-align: left;
 }
 
-.container h1,p
- {
+.container h1,
+p {
   margin-bottom: 15px;
- }
+}
 
- ul li{
-
+ul li {
   margin-bottom: 15px;
-
- }
- img{
+  text-align: start;
+}
+.telephoneImg {
+  width: 56px;
   margin-top: -50px;
- }
+  margin-bottom: 16px;
+  height:56px ;
+  object-fit: fill;
+  border-radius: 5px;
+}
+.offerList{
+  width: 100%;
+  text-align: start;
+}
+
+p
+{
+  color: #797979;
+}

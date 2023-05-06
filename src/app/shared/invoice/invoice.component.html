@@ -70,4 +70,5 @@
   <button (click)="payPendingBill()" type="submit" class="pending-btn">
     Pay Pending Bill
   </button>
+  <button *ngIf="isTele" (click)="viewPlans()" class="pending-btn">View Plans</button>
 </div>

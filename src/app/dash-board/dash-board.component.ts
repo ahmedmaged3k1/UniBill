@@ -1,4 +1,5 @@
 
+
 import { Component, OnInit } from '@angular/core';
 import { BillDataService } from '../shared/dataService/bill-data.service';
 import { Bills } from '../models/Bills';
@@ -17,6 +18,7 @@ export class DashBoardComponent implements OnInit {
   billType: String = '';
   isLoggedin: boolean;
   id;
+  userPrice
   constructor(
     private dataService: BillDataService,
     private userService: UserDataService,
@@ -26,8 +28,8 @@ export class DashBoardComponent implements OnInit {
   ) {
     this.checkRoute();
 
-    this.checkLoggedIn().then(e=>{
-    this.getBills();
+    this.checkLoggedIn().then(e => {
+      this.getBills();
     }
     );
   }
@@ -36,29 +38,42 @@ export class DashBoardComponent implements OnInit {
   }
   getBills() {
     this.dataService.getBills(this.id).subscribe(bills => {
-      if(!bills.documents)
-      return
+      if (!bills.documents)
+        return
 
-      this.bills = bills.documents?.map(b=>{
-        return{
-          id :b.name.split('/').pop(),
-          amount : b.fields.amount.stringValue,
-          date : b.fields.date.stringValue,
-          dueDate : b.fields.dueDate.stringValue,
-          type : b.fields.type.stringValue,
-          status : b.fields.status.stringValue,
+
+      this.bills = bills.documents?.map(b => {
+        if (b.fields.type.stringValue.toLowerCase() === "electricity") {
+          this.userPrice = parseInt(b.fields.amount.stringValue) * parseInt(this.dataService.electricityAmountPrice)
+        }
+        else if (b.fields.type.stringValue.toLowerCase() === "water") {
+          this.userPrice = parseInt(b.fields.amount.stringValue) * parseInt(this.dataService.waterAmountPrice)
+        }
+        else if (b.fields.type.stringValue.toLowerCase() === "telephone") {
+          this.userPrice = parseInt(b.fields.amount.stringValue) * parseInt(this.dataService.telephoneAmountPrice)
+        }
+        console.log(this.userPrice);
+
+        return {
+          id: b.name.split('/').pop(),
+          amount: b.fields.amount.stringValue,
+          date: b.fields.date.stringValue,
+          dueDate: b.fields.dueDate.stringValue,
+          type: b.fields.type.stringValue,
+          status: b.fields.status.stringValue,
+          price: this.userPrice.toString()
         }
 
       });
-      if(this.billType.toLowerCase()==="water"){
+      if (this.billType.toLowerCase() === "water") {
         this.getWaterBills();
       }
-      else if(this.billType.toLowerCase()==="electricity"){
+      else if (this.billType.toLowerCase() === "electricity") {
 
 
         this.getElectricityBills();
       }
-      else if(this.billType.toLowerCase()==="telephone"){
+      else if (this.billType.toLowerCase() === "telephone") {
         this.getTelephoneBills();
       }
     })
@@ -102,7 +117,7 @@ export class DashBoardComponent implements OnInit {
   }
 
   checkLoggedIn() {
-    return new Promise(res=>{
+    return new Promise(res => {
       this.auth.getCurrentUser().subscribe(user => {
 
 

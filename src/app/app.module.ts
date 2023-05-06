@@ -25,6 +25,7 @@ import { RouterModule } from '@angular/router';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { UsersTableComponent } from './Admin/users-table/users-table.component';
 import { AddBillComponent } from './Admin/add-bill/add-bill.component';
+import { AdminConfigurationComponent } from './Admin/admin-configuration/admin-configuration.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { AddBillComponent } from './Admin/add-bill/add-bill.component';
     AdminDashboardComponent,
     UsersTableComponent,
     AddBillComponent,
+    AdminConfigurationComponent,
   ],
   imports: [
     BrowserModule,

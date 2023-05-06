@@ -7,6 +7,8 @@
       <th>Due Date</th>
       <th>Status</th>
       <th>Type</th>
+      <th>Price</th>
+
     </tr>
   </thead>
   <tbody>
@@ -28,6 +30,9 @@
       </td>
       <td (click)="navigateToBillDetails(bill.id)" style="cursor: pointer">
         {{ bill.type }}
+      </td>
+      <td (click)="navigateToBillDetails(bill.id)" style="cursor: pointer">
+        {{ bill.price }}
       </td>
     </tr>
   </tbody>
