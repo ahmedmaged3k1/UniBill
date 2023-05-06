@@ -40,6 +40,30 @@ export class UsersTableComponent implements OnInit {
   navigate(){
     this.router.navigate(['/Add-Bill']);
   }
-
+  payBill(bill){
+    this.billdata.getBillById(bill.id).subscribe((bills) => {
+      // console.log(bills);
+      {
+        // console.log('before');
+        const b = bills;
+        const updatedBill = {
+          id: b.name.split('/').pop(),
+          amount: b.fields.amount.stringValue,
+          date: b.fields.date.stringValue,
+          dueDate: b.fields.dueDate.stringValue,
+          type: b.fields.type.stringValue,
+          status: b.fields.status.stringValue,
+        };
+        // console.log('updated bill' + updatedBill);
+        this.billdata.updateBill(updatedBill).subscribe((res) => {
+          // console.log('RESULT' + res);
+        });
+        return updatedBill;
+      }
+    });
+  }
+  changeStatus() {
+  
+  }
 }
 
