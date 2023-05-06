@@ -70,4 +70,5 @@ export class PaymentComponent implements OnInit {
     this.changeStatus();
     return true;
   }
+  showPopup = false;
 }
