@@ -24,5 +24,6 @@ export class AdminConfigurationComponent {
     this.billData.waterOverdue=this.waterOverdue;
     this.billData.telephoneAmountPrice=this.telephoneAmount;
     this.billData.telephoneOverdue=this.telephoneOverdue;
+    alert("Configration Changed")
   }
 }
