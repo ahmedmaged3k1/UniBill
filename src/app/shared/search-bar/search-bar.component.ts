@@ -20,7 +20,7 @@ export class SearchBarComponent {
   searchBills(){
     this.dataService.searchString=this.searchedString
     if(this.filterBy===null)this.filterBy="type"
-    this.dataService.getBillByType(this.searchedString,this.bills).subscribe(
+    this.dataService.searchBillsByType(this.searchedString).subscribe(
       bill => {
         console.log('Found bill:', bill);
         this.billList.emit(bill)

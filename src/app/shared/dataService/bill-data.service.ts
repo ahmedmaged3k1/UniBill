@@ -74,22 +74,13 @@ deleteBill(billId: string): Observable<void> {
     );
   }
   
-  searchBillsByType(type: string): Observable<Bills[]> {
-    const url = `${this.billsUrl}/${this.userId}/Bills`;
-    const params = new HttpParams().set('orderBy', `"type"`).append('equalTo', `"${type}"`);
+  searchBillsByType(type: string): Observable<any[]> {
+    const url = `${this.billsUrl}/${this.userId}/Bills?type=${type}`;
+    
+    // Set the query parameter for the type
+   /// const params = new HttpParams().set('type', type);
   
-    return this.http.get<{ [key: string]: Bills }>(url, { params }).pipe(
-      map((res) => {
-        const bills: Bills[] = [];
-        for (const key in res) {
-          if (res.hasOwnProperty(key)) {
-            bills.push({ ...res[key], id: key });
-          }
-        }
-        return bills;
-      }),
-      
-    );
+    return this.http.get<any[]>(url);
   }
   
   

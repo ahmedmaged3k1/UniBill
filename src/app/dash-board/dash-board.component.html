@@ -24,9 +24,7 @@
     <div class="pending">
       <h1>Latest Invoices</h1>
     </div>
-    <div class="searchBar">
-      <app-search-bar (billList)="recieveBill($event)"></app-search-bar>
-    </div>
+   
 
     <div class="invoicesTable">
       <app-table [bills]="bills" [searchedBills]="bills"></app-table>
