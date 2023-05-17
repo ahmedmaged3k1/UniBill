@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BillDataService } from '../dataService/bill-data.service';
 import { Bills } from 'src/app/models/Bills';
 import { AuthService } from '../auth/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute , Router } from '@angular/router';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -14,7 +14,9 @@ export class PaymentComponent implements OnInit {
   constructor(
     private dataService: BillDataService,
     private userInfo: AuthService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
+
   ) {
     // this.userInfo.getCurrentUser().subscribe((res) => {
     //   this.id = res.uid;
@@ -67,6 +69,7 @@ export class PaymentComponent implements OnInit {
       return false;
     }
     this.changeStatus();
+    this.router.navigate(['/Dash-Board'])
     return true;
   }
   showPopup = false;

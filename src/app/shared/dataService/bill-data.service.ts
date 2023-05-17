@@ -44,9 +44,15 @@ export class BillDataService {
         status: { stringValue: 'paid' },
       },
     };
+   
 
     return this.http.patch<void>(url, data);
   }
+ 
+deleteBill(billId: string): Observable<void> {
+  const url = `${this.billsUrl}/${this.userId}/Bills/${billId}`;
+  return this.http.delete<void>(url);
+}
   getBillByType(type: string, bill: Bills): Observable<Bills[]> {
     const url = `${this.billsUrl}/${this.userId}/Bills/?type=${type}`;
     const data = {
