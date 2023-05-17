@@ -37,7 +37,7 @@ const routes: Routes = [
   { path: 'Telephone-Bill', component: TelephoneBillComponent },
   { path: 'Telephone-Bill/:id', component: TelephoneBillComponent },
   { path: 'Telephone-Card', component: TelephoneCardComponent },
-  { path: 'Add-Bill', component: AddBillComponent },
+  { path: 'Add-Bill/:id', component: AddBillComponent },
   { path: 'admin', component: AdminDashboardComponent },
   { path: 'User-Bills', component: UsersTableComponent },
   { path: 'User-Bills/:id', component: UsersTableComponent },

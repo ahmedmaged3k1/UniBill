@@ -14,7 +14,9 @@ export class UsersTableComponent implements OnInit {
   bills: Bills[];
   userId: string;
   constructor(private userData: UserDataService, private route: ActivatedRoute, private billdata: BillDataService,private router :Router , private location: Location) { }
+
   ngOnInit(): void {
+
     this.route.params.subscribe(res => {
       this.userId = res['id'];
       this.loadUserBills();
@@ -39,7 +41,7 @@ export class UsersTableComponent implements OnInit {
   }
 
   navigate(){
-    this.router.navigate(['/Add-Bill']);
+    this.router.navigate(['/Add-Bill',this.userId]);
   }
   payBill(bill){
     this.billdata.getBillById(bill.id).subscribe((bills) => {

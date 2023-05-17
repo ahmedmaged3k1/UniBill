@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Bills } from 'src/app/models/Bills';
 import { BillDataService } from 'src/app/shared/dataService/bill-data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-bill',
@@ -11,11 +12,17 @@ import { BillDataService } from 'src/app/shared/dataService/bill-data.service';
 })
 export class AddBillComponent implements OnInit {
   form: FormGroup;
+  userId: string;
 
-  constructor(private billData :BillDataService){
+  constructor(private billData :BillDataService, private route: ActivatedRoute, private router : Router){
 
   }
   ngOnInit(): void {
+
+    this.route.params.subscribe(res => {
+      this.userId = res['id'];
+    
+    })
     this.form = new FormGroup({
       billType: new FormControl('', Validators.required),
       amount: new FormControl('', Validators.required),
@@ -55,8 +62,11 @@ export class AddBillComponent implements OnInit {
       fields : bill
     }
     console.log(bill);
-    this.billData.addBill(data).subscribe(res=>{
+    this.billData.addBill(data,this.userId).subscribe(res=>{
       console.log(res);
+      alert("Bill Added")
+      this.router.navigate(['/User-Bills',this.userId])
+
 
     })
 
