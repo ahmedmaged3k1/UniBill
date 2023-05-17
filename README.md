@@ -47,3 +47,10 @@ To set up and run the Billing System locally, follow these steps:
 
 Access the Billing System by opening a web browser and visiting `http://localhost:4200`.
 
+## Screenshots 
+![image](https://github.com/ahmedmaged3k1/angular-UniBill/assets/60134186/6a1afc90-1e68-41bf-9c8c-d081695651c4)
+![image](https://github.com/ahmedmaged3k1/angular-UniBill/assets/60134186/aa2b26ea-873e-4a89-91ed-5fa4d943d704)
+![image](https://github.com/ahmedmaged3k1/angular-UniBill/assets/60134186/2515fd4a-98c1-4274-b19f-2dc868afc5f2)
+![image](https://github.com/ahmedmaged3k1/angular-UniBill/assets/60134186/f47d2032-a6d4-4981-88c4-b4116467d265)
+![image](https://github.com/ahmedmaged3k1/angular-UniBill/assets/60134186/d3324aaa-7796-41e8-94e5-071a32171d08)
+
