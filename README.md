@@ -52,5 +52,5 @@ Access the Billing System by opening a web browser and visiting `http://localhos
 ![image](https://github.com/ahmedmaged3k1/angular-UniBill/assets/60134186/aa2b26ea-873e-4a89-91ed-5fa4d943d704)
 ![image](https://github.com/ahmedmaged3k1/angular-UniBill/assets/60134186/2515fd4a-98c1-4274-b19f-2dc868afc5f2)
 ![image](https://github.com/ahmedmaged3k1/angular-UniBill/assets/60134186/f47d2032-a6d4-4981-88c4-b4116467d265)
-![image](https://github.com/ahmedmaged3k1/angular-UniBill/assets/60134186/d3324aaa-7796-41e8-94e5-071a32171d08)
+
 
