@@ -1,0 +1,39 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <main>
+    <table class="tableContainer">
+      <thead>
+        <tr>
+          <th>Invoice Id</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bill of bills">
+          <td>
+            {{ bill.id }}
+          </td>
+          <td>
+            {{ bill.date }}
+          </td>
+          <td>
+            {{ bill.amount }}
+          </td>
+          <td>
+            {{ bill.dueDate }}
+          </td>
+          <td>
+            {{ bill.status }}
+          </td>
+          <td>
+            {{ bill.type }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>

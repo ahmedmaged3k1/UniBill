@@ -29,6 +29,7 @@ import { AdminConfigurationComponent } from './Admin/admin-configuration/admin-c
 import { HistoryComponent } from './history/history.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { CommonModule } from '@angular/common';
+import { PaidVisaComponent } from './practical/paid-visa/paid-visa.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { CommonModule } from '@angular/common';
     AdminConfigurationComponent,
     HistoryComponent,
     PopUpComponent,
+    PaidVisaComponent,
   ],
   imports: [
     BrowserModule,

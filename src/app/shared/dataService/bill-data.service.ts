@@ -37,11 +37,20 @@ export class BillDataService {
     });
 
   }
-  updateBill(bill: Bills): Observable<void> {
+  updateBill(bill: Bills, option  ): Observable<void> {
+    var paidType : String = "paid"
+
+    if(option==0){
+      paidType = "paid visa"
+    }
+    else {
+      paidType = "paid"
+
+    }
     const url = `${this.billsUrl}/${this.userId}/Bills/${bill.id}?updateMask.fieldPaths=status`;
     const data = {
       fields: {
-        status: { stringValue: 'paid' },
+        status: { stringValue: paidType },
       },
     };
    

@@ -18,6 +18,7 @@ import { AddBillComponent } from './Admin/add-bill/add-bill.component';
 import { AdminConfigurationComponent } from './Admin/admin-configuration/admin-configuration.component';
 import { HistoryComponent } from './history/history.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
+import { PaidVisaComponent } from './practical/paid-visa/paid-visa.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -45,6 +46,8 @@ const routes: Routes = [
   { path: 'Admin-Configuration', component: AdminConfigurationComponent },
 
   { path: 'Bills-History', component: HistoryComponent },
+  { path: 'Visa', component: PaidVisaComponent },
+
 ];
 
 @NgModule({

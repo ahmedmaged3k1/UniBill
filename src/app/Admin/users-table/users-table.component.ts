@@ -58,7 +58,7 @@ export class UsersTableComponent implements OnInit {
           status: b.fields.status.stringValue,
         };
         // console.log('updated bill' + updatedBill);
-        this.billdata.updateBill(updatedBill).subscribe((res) => {
+        this.billdata.updateBill(updatedBill,1).subscribe((res) => {
           // console.log('RESULT' + res);
         alert("Bill paid")
        // this.location.reload();

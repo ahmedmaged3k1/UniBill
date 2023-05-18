@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tableContainer {
+    margin-top: 20%;
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 13px;
+    line-height: 150%;
+    text-align: center;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px;
+    margin-inline: 10px;
+  }
+  th {
+    color: #797979;
+  }
+  td,
+  th {
+    padding: 20px 10px;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  table tr {
+    border-bottom: 1px solid #cbcbcb;
+  }
+  

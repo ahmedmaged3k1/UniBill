@@ -11,6 +11,12 @@ import { ActivatedRoute , Router } from '@angular/router';
 })
 export class PaymentComponent implements OnInit {
   id;
+  option =0;
+  loginForm: FormGroup;
+  creditCard: string
+  bankName : string
+  cvvCode : string 
+  expireDate: string
   constructor(
     private dataService: BillDataService,
     private userInfo: AuthService,
@@ -26,6 +32,7 @@ export class PaymentComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       this.id = params.get('id');
     });
+    
   }
 
   bills: Bills[];
@@ -43,8 +50,9 @@ export class PaymentComponent implements OnInit {
           type: b.fields.type.stringValue,
           status: b.fields.status.stringValue,
         };
+
        
-        this.dataService.updateBill(updatedBill).subscribe((res) => {
+        this.dataService.updateBill(updatedBill, this.option).subscribe((res) => {
           // console.log('RESULT' + res);
         });
         return updatedBill;
@@ -68,9 +76,28 @@ export class PaymentComponent implements OnInit {
       alert('Please Submit Valid Data');
       return false;
     }
+    
     this.changeStatus();
-    this.router.navigate(['/Dash-Board'])
+    this.creditCard = this.paymentForm.get('creditNumber').value
+    this.bankName = this.paymentForm.get('cardName').value
+    this.cvvCode = this.paymentForm.get('cvvCode').value
+    this.expireDate = this.paymentForm.get('expireDate').value
+    console.log("credit card data is ", this.creditCard)
+    console.log("bank name data is ", this.bankName)
+    console.log("cvv code card data is ", this.cvvCode)
+    console.log("expire date card data is ", this.expireDate)
+    
+
+  //  this.router.navigate(['/Dash-Board'])
     return true;
   }
   showPopup = false;
+}
+interface Visa {
+  creditCard: string,
+  bankName : string,
+  cvvCode : string , 
+  expireDate: string
+
+
 }
