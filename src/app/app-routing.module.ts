@@ -19,6 +19,7 @@ import { AdminConfigurationComponent } from './Admin/admin-configuration/admin-c
 import { HistoryComponent } from './history/history.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { PaidVisaComponent } from './practical/paid-visa/paid-visa.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -47,6 +48,8 @@ const routes: Routes = [
 
   { path: 'Bills-History', component: HistoryComponent },
   { path: 'Visa', component: PaidVisaComponent },
+  
+  { path: 'resetPassword', component: PasswordResetComponent },
 
 ];
 

@@ -30,6 +30,7 @@ import { HistoryComponent } from './history/history.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { CommonModule } from '@angular/common';
 import { PaidVisaComponent } from './practical/paid-visa/paid-visa.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +55,7 @@ import { PaidVisaComponent } from './practical/paid-visa/paid-visa.component';
     HistoryComponent,
     PopUpComponent,
     PaidVisaComponent,
+    PasswordResetComponent,
   ],
   imports: [
     BrowserModule,
