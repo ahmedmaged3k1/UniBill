@@ -48,8 +48,7 @@ constructor(private auth : AuthService,private router : Router){}
   }
   // Firebase Functions 
   //noran
-  // hellooo
-  // miss noraaan i am waiting 
+  // create a reset password component(Dialogue or another page) which takes the password for the current user as a confirmation(should match the user's password) and a new different password with a confirmed one.If the password is changes successfully, the user will be redirected to the home page and otherwise will show an error message for failing to change the password
   login(){
     var option =1
     this.loginForm
