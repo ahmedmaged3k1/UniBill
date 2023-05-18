@@ -47,6 +47,8 @@ constructor(private auth : AuthService,private router : Router){}
     return true
   }
   // Firebase Functions 
+  //noran
+  
   login(){
     this.loginForm
     this.auth.login(this.email, this.password)
