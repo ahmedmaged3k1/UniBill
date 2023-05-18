@@ -49,7 +49,7 @@ constructor(private auth : AuthService,private router : Router){}
   // Firebase Functions 
   //noran
   // hellooo
-  
+  // miss noraaan i am waiting 
   login(){
     var option =1
     this.loginForm
