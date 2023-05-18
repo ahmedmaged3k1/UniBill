@@ -67,7 +67,7 @@ Laaaazm t3mly login mn el awl haty el login l awl
 B3d kda login 
 Esm el email :
 MadKingmrwhite@gmail.com
-Password : 222222
+Password : 2222222
 لما تغيري هيتغير
 */
   login(){
