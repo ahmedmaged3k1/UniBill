@@ -48,8 +48,10 @@ constructor(private auth : AuthService,private router : Router){}
   }
   // Firebase Functions 
   //noran
+  // hellooo
   
   login(){
+    var option =1
     this.loginForm
     this.auth.login(this.email, this.password)
   }
