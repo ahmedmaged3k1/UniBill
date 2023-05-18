@@ -22,8 +22,11 @@ export class AuthService {
       this.router.navigate(['/login'])
     })
   }
-  resetPassword(){
-    
+ async resetPassword(password: string){
+    const user = this.fireAuth.currentUser;
+    if(user){
+      (await user).updatePassword(password);
+    } 
   }
   register(email: string, password: string, phoneNumber: string, name: string, postOrPre: number) {
     this.fireAuth.createUserWithEmailAndPassword(email, password).then((User) => {

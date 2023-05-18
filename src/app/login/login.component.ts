@@ -55,6 +55,21 @@ constructor(private auth : AuthService,private router : Router){}
   // the user will be redirected to the home page and otherwise will show an 
   //error message for failing to change the password
   // shofto tamam
+  /* 
+3mlna component esmo password-rest
+3obara 3n hagtern
+Input text w button
+Input bya5od  l password
+W byro7 3la el auth.service
+3mlna feha function bt3ml reset ll password w bt3ml l haga l matlooba
+Lw l password sah
+Laaaazm t3mly login mn el awl haty el login l awl 
+B3d kda login 
+Esm el email :
+MadKingmrwhite@gmail.com
+Password : 222222
+لما تغيري هيتغير
+*/
   login(){
     var option =1
     this.loginForm
