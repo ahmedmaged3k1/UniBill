@@ -68,6 +68,12 @@ B3d kda login
 Esm el email :
 MadKingmrwhite@gmail.com
 Password : 2222222
+user tany :
+am@gmail.com
+123456 
+
+
+lma t8yry el password e3mly logouy w 5oshy bl password l gdeda
 لما تغيري هيتغير
 */
   login(){
